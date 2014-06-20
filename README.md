@@ -5,9 +5,12 @@ cems-php-sdk
 $client = new CEMS\Client($email, $password);
 $client = new CEMS\Client($access_token);
 
-$client->get('events', array(
-  'category_id' => array(1, 2)
-)); // CEMS\Collection
+try {
+  $client->get('events', array(
+    'category_id' => array(1, 2)
+  )); // CEMS\Collection
+catch (CEMS\Error $e) {
+}
 
 $customers = $client->get('customers'); // CEMS\Collection
 
