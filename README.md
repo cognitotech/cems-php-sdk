@@ -9,7 +9,12 @@ $client->get('events', array(
   'category_id' => array(1, 2)
 )); // CEMS\Collection
 
-$client->get('customers'); // CEMS\Collection
+$customers = $client->get('customers'); // CEMS\Collection
+
+foreach ($customers as $customer) {
+  print_r($customer->toArray());
+  // toObject()
+}
 
 $client->get("customers/$id"); // CEMS\Resource
 $client->post("subscriptions", array(
