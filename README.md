@@ -2,31 +2,33 @@ cems-php-sdk
 ============
 
 ```php
-$client = new CEMS\Client($email, $password);
-$client = new CEMS\Client($access_token);
+$client = new CEMS\CemsClient($email, $password, $apiUrl);
+$client = new CEMS\CemsClient($access_token, $apiUrl);
 
 try {
-  $client->get('events', array(
+  $response= $client->request('GET','events', array(
     'category_id' => array(1, 2)
-  )); // CEMS\Collection
-catch (CEMS\Error $e) {
+  )); // CEMS\CemsResponse
+catch (CEMS\CemsError $e) {
 }
 
-$customers = $client->get('customers'); // CEMS\Collection
+$client->request('GET',"customers/$id')->getObject(); // CEMS\Object
+
+$customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\CemsCustomer
 
 foreach ($customers as $customer) {
   print_r($customer->toArray());
   // toObject()
 }
 
-$client->get("customers/$id"); // CEMS\Resource
-$client->post("subscriptions", array(
+
+$client->request('POST',"subscriptions", array(
 	'abc' => $abc
 ));
-$client->put("subscriptions/$id", array(
+$client->request('PUT',"subscriptions/$id", array(
 	'abc' => $abc
 ));
-$client->get('subscriptions/find_by', array(
+$client->request('GET','subscriptions/find_by', array(
 	'customer_id'			=> $customer_id,
 	'subscriber_list_id'	=> $subscriber_list_id
 ));

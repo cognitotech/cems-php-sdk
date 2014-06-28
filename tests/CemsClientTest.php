@@ -6,7 +6,7 @@
  * Time: 14:20
  */
 
-class ClientTest extends PHPUnit_Framework_TestCase {
+class CemsClientTest extends PHPUnit_Framework_TestCase {
 
     public function test()
     {
