@@ -21,10 +21,11 @@ class CemsResponse {
     }
 
     public function getObject($type = 'CEMS\CemsObject') {
-
-    }
-
-    public function getRequestForPage($page_number) {
-
+        $class=ucwords($type);
+        $object=NULL;
+        if (class_exists($class)) {
+            $object = new $class($this->_response);
+        }
+        return $object;
     }
 }

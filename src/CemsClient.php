@@ -59,8 +59,21 @@ class CemsClient {
     {
         $request = $this->_client->createRequest($httpMethod, $path);
         $request->setHeader('Access_Token', $this->_accessToken);
-        $res=$this->_client->send($request);
-        $response= new CemsResponse($res->body()->json());
+        switch ($httpMethod){
+            case 'GET':
+                $query = $request->getQuery();
+                foreach ($params as $param => $value)
+                    $query->set($param, $value);
+                break;
+            default:
+                $postBody = $request->getBody();
 
+                // $postBody is an instance of GuzzleHttp\Post\PostBodyInterface
+                foreach ($params as $param => $value)
+                    $postBody->setField($param, $value);
+        }
+        $res=$this->_client->send($request);
+        $response = new CemsResponse($res->body()->json());
+        return $response;
     }
 }
