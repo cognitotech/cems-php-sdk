@@ -2,7 +2,8 @@
     "name": "sss/cems-php-sdk",
     "description": "PHP SDK for SSS CEMS platform",
     "require": {
-        "guzzlehttp/guzzle": "4.*"
+        "guzzlehttp/guzzle": "4.*",
+        "phpdocumentor/phpdocumentor":"2.*"
     },
     "require-dev": {
         "phpunit/phpunit": "4.*"
