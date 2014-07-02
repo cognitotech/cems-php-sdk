@@ -1,5 +1,5 @@
 {
-    "name": "sss/cems-php-sdk",
+    "name": "siliconstraits/cems-php-sdk",
     "description": "PHP SDK for SSS CEMS platform",
     "require": {
         "guzzlehttp/guzzle": "4.*",
@@ -11,12 +11,16 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Hai Phan",
-            "email": "pnghai@gmail.com"
+            "name": "Hai Phan Nguyen",
+            "email": "nguyenhai@siliconstraits.vn"
+        },
+        {
+            "name": "Khoi Vu Dinh",
+            "email": "dinhkhoi@siliconstraits.vn"
         }
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"CEMS":"src/"}
+        "psr-4": {"CEMS\\":"src/CEMS/"}
     }
 }

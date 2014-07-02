@@ -8,7 +8,11 @@
 
 namespace CEMS;
 
-
-class CemsError {
+/**
+ * Class Error
+ * @package CEMS
+ */
+class Error
+{
 
 } 

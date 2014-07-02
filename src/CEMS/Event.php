@@ -8,7 +8,11 @@
 
 namespace CEMS;
 
-
-class CemsEvent extends CemsObject {
+/**
+ * Class Event
+ * @package CEMS
+ */
+class Event extends Resource
+{
 
 } 

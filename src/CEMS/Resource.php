@@ -8,15 +8,20 @@
 
 namespace CEMS;
 
-
-class CemsObject {
+/**
+ * Class Resource
+ * @package CEMS
+ */
+class Resource
+{
     /**
      * @var array
      */
     protected $_data = array();
 
-    function __construct($json_object){
-        $this->_data=$json_object;
+    function __construct($json_object)
+    {
+        $this->_data = $json_object;
     }
 
     /**
@@ -45,33 +50,33 @@ class CemsObject {
     }
 
     /**
-     * @param $name
+     * @param $key
      * @param $value
      */
-    public function __set($name, $value)
+    public function __set($key, $value)
     {
-        $this->_data[$name] = $value;
+        $this->_data[$key] = $value;
     }
 
     /**
-     * @param $name
+     * @param $key
      * @return value
      */
-    public function __get($name)
+    public function __get($key)
     {
-        if (array_key_exists($name, $this->_data)) {
-            return $this->_data[$name];
+        if (array_key_exists($key, $this->_data)) {
+            return $this->_data[$key];
         }
 
         return null;
     }
 
     /**
-     * @param $name
+     * @param $key
      * @return bool
      */
-    public function __isset($name)
+    public function __isset($key)
     {
-        return isset($this->_data[$name]);
+        return isset($this->_data[$key]);
     }
 } 

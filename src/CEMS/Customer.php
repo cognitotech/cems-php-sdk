@@ -8,7 +8,11 @@
 
 namespace CEMS;
 
-
-class CemsCustomer extends CemsObject{
+/**
+ * Class Customer
+ * @package CEMS
+ */
+class Customer extends Resource
+{
 
 } 
