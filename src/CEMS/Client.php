@@ -8,7 +8,7 @@
 
 namespace CEMS;
 
-require_once dirname(dirname(dirname(__FILE__))) . './vendor/autoload.php';
+require_once dirname(dirname(dirname(__FILE__))) . '/vendor/autoload.php';
 use GuzzleHttp\Client as GuzzleClient;
 
 /**
@@ -71,7 +71,7 @@ class Client
                 'staff[password]' => $password
             ]
         ]);
-
+        #TODO : put exception here
         echo $res->getStatusCode(); // 201
         echo $res->getHeader('content-type');
         $JSON_response = $res->json();
