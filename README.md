@@ -48,13 +48,13 @@ All CEMS API requests can be made using the `CEMS\Client` class. This class must
 ### API key Config
 
     ```php
-    $client = new CEMS\CemsClient($access_token, $apiUrl);
+    $client = new CEMS\Client($access_token, $apiUrl);
     ```
 
 ### Email/Password Config
 
     ```php
-    $client = new CEMS\CemsClient($email, $password, $apiUrl);
+    $client = new CEMS\Client($email, $password, $apiUrl);
     ```
 
 Your app users are almost ready to start signing!
@@ -75,8 +75,8 @@ For example:
     try {
       $response= $client->get('events', array(
         'category_id' => array(1, 2)
-      )); // CEMS\CemsResponse
-    catch (CEMS\CemsError $e) {
+      )); // CEMS\Response
+    catch (CEMS\Error $e) {
     }
     ```
 
@@ -100,7 +100,7 @@ Or using these alias below:
 - `get($path, $params = NULL)`
 - `post($path, $params = NULL)`
 - `put($path, $params = NULL)`
-- `patch($path, $params = NULL)`
+- `delete($path, $params = NULL)`
 
 *NOTE*: You must provide the right path from API documentation.
 
@@ -109,7 +109,7 @@ The request will automatically return a Response object contain JSON data return
     ```php
     $customer = $client->request('GET',"customers/$id')->getObject(); // CEMS\Object
 
-    $customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\CemsCustomer
+    $customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\Customer
     ```
 
 ### Retrieving fields returned from the API

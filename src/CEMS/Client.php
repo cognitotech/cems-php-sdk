@@ -8,7 +8,7 @@
 
 namespace CEMS;
 
-require_once dirname(dirname(dirname(__FILE__))) .'./vendor/autoload.php';
+require_once dirname(dirname(dirname(__FILE__))) . './vendor/autoload.php';
 use GuzzleHttp\Client as GuzzleClient;
 
 /**
@@ -20,17 +20,17 @@ class Client
     /**
      * @var string
      */
-    protected $_accessToken='';
+    protected $_accessToken = '';
 
     /**
      * @var string
      */
-    protected $_apiUrl='';
+    protected $_apiUrl = '';
 
     /**
      * @var array|\GuzzleHttp\Client
      */
-    protected $_client=array();
+    protected $_client = array();
 
     /**
      * parse arguments and go to corresponding constructor
@@ -65,13 +65,16 @@ class Client
     {
 
         $this->_apiUrl = $api_url;
-        $res = $this->_client->get($this->_apiUrl . '/staffs/sign_in.json', [
-            'staff' => [$email, $password]
+        $res = $this->_client->post($this->_apiUrl . '/staffs/sign_in.json', [
+            'body' => [
+                'staff[email]' => $email,
+                'staff[password]' => $password
+            ]
         ]);
 
         echo $res->getStatusCode(); // 201
-        echo $res->getHeader('content-type'); // 'application/json; charset=utf8'
-        $JSON_response = $res->getBody()->json(); // {"access_token":"d5uV-zgVVYz2ekSQ4vf6"}
+        echo $res->getHeader('content-type');
+        $JSON_response = $res->json();
 
         $this->_accessToken = $JSON_response['access_token'];
     }
@@ -81,13 +84,14 @@ class Client
     }
 
     /**
-     * @param $httpMethod
-     * @param $path
+     * @param      $httpMethod
+     * @param      $path
      * @param null $params
      * @param null $version
+     *
      * @return Response
      */
-    public function request($httpMethod, $path, $params = NULL, $version = NULL)
+    public function request($httpMethod, $path, $params = null, $version = null)
     {
         $request = $this->_client->createRequest($httpMethod, $path);
         $request->setHeader('Access_Token', $this->_accessToken);
@@ -102,54 +106,77 @@ class Client
 
                 // $postBody is an instance of GuzzleHttp\Post\PostBodyInterface
                 foreach ($params as $param => $value)
-                    $postBody->setField($param, $value);
+                    $pieces = explode("s/", $path);
+                $postBody->setField($pieces[0] . '[' . $param . ']', $value);
         }
         $res = $this->_client->send($request);
+        #TODO: parse error here
         $response = new Response($res->json());
+
         return $response;
     }
 
     /**
-     * @param $path
+     * @param      $path
      * @param null $params
      * @param null $version
+     *
      * @return Response
      */
-    public function get($path, $params = NULL, $version = NULL)
+    public function get($path, $params = null, $version = null)
     {
-        return $this->request('GET',$path, $params = NULL, $version = NULL);
+        return $this->request('GET', $path, $params = null, $version = null);
     }
 
     /**
-     * @param $path
+     * @param      $path
      * @param null $params
      * @param null $version
+     *
      * @return Response
      */
-    public function post($path, $params = NULL, $version = NULL)
+    public function post($path, $params = null, $version = null)
     {
-        return $this->request('POST',$path, $params = NULL, $version = NULL);
+        return $this->request('POST', $path, $params = null, $version = null);
     }
 
     /**
-     * @param $path
+     * @param      $path
      * @param null $params
      * @param null $version
+     *
      * @return Response
      */
-    public function patch($path, $params = NULL, $version = NULL)
+    public function put($path, $params = null, $version = null)
     {
-        return $this->request('PATCH',$path, $params = NULL, $version = NULL);
+        return $this->request('PUT', $path, $params = null, $version = null);
     }
 
     /**
-     * @param $path
+     * @param      $path
      * @param null $params
      * @param null $version
+     *
      * @return Response
      */
-    public function delete($path, $params = NULL, $version = NULL)
+    public function delete($path, $params = null, $version = null)
     {
-        return $this->request('DELETE',$path, $params = NULL, $version = NULL);
+        return $this->request('DELETE', $path, $params = null, $version = null);
+    }
+
+    /**
+     * @return string
+     */
+    public function getAccessToken()
+    {
+        return $this->_accessToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function getApiUrl()
+    {
+        return $this->_apiUrl;
     }
 }

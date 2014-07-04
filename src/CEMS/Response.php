@@ -29,15 +29,17 @@ class Response
 
     /**
      * @param string $type
+     *
      * @return Collection
      */
     public function getObjectList($type = 'CEMS\Resource')
     {
-        return new Collection($this->_response,$type);
+        return new Collection($this->_response, $type);
     }
 
     /**
      * @param string $type
+     *
      * @return object
      */
     public function getObject($type = 'CEMS\Resource')
@@ -47,11 +49,13 @@ class Response
         if (class_exists($class)) {
             $object = new $class($this->_response);
         }
+
         return $object;
     }
 
     /**
      * @param $key
+     *
      * @return value
      */
     public function __get($key)
@@ -65,6 +69,7 @@ class Response
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function __isset($key)

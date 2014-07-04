@@ -1,12 +1,13 @@
 {
     "name": "siliconstraits/cems-php-sdk",
     "description": "PHP SDK for SSS CEMS platform",
+    "version": "0.1",
     "require": {
         "guzzlehttp/guzzle": "4.*",
-        "phpdocumentor/phpdocumentor":"2.*"
+        "phpdocumentor/phpdocumentor": "2.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "4.*"
+        "phpunit/phpunit": "3.7"
     },
     "license": "MIT",
     "authors": [
@@ -21,6 +22,8 @@
     ],
     "minimum-stability": "stable",
     "autoload": {
-        "psr-4": {"CEMS\\":"src/CEMS/"}
+        "psr-4": {
+            "CEMS\\": "src/CEMS/"
+        }
     }
 }

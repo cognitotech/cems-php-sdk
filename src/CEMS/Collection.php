@@ -17,13 +17,13 @@ class Collection
     /**
      * @var array
      */
-    protected $_collection=array();
+    protected $_collection = array();
 
     /**
-     * @param $RAW_response
+     * @param        $RAW_response
      * @param string $type
      */
-    function __construct($RAW_response, $type='CEMS\Resource')
+    function __construct($RAW_response, $type = 'CEMS\Resource')
     {
         $$this->_collection = array();
 
@@ -39,7 +39,8 @@ class Collection
     /**
      * @return array
      */
-    public function toArray(){
+    public function toArray()
+    {
         return $this->_collection;
     }
 } 

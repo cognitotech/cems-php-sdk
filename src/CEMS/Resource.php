@@ -60,6 +60,7 @@ class Resource
 
     /**
      * @param $key
+     *
      * @return value
      */
     public function __get($key)
@@ -73,6 +74,7 @@ class Resource
 
     /**
      * @param $key
+     *
      * @return bool
      */
     public function __isset($key)
