@@ -16,31 +16,31 @@ You don't need to clone the repo directly to use this SDK, the entire library an
 
 - First, install Composer if you don't have it already
 
-   ```shell
-   curl -sS https://getcomposer.org/installer | php
-   ```
+```shell
+curl -sS https://getcomposer.org/installer | php
+```
 
 - Create `composer.json` and add the following
 
-   ```json
-   {
-       "require": {
-           "siliconstraits/cems-php-sdk": "dev-master"
-       }
+```json
+{
+   "require": {
+       "siliconstraits/cems-php-sdk": "dev-master"
    }
-   ```
+}
+```
 
 - Install `cems-php-sdk` package via Composer
 
-   ```shell
-   php composer.phar install
-   ```
+```shell
+php composer.phar install
+```
 
 - Include the library in your script
 
-   ```php
-   require_once 'vendor/autoload.php';
-   ```
+```php
+require_once 'vendor/autoload.php';
+```
 
 - See below for how to configure your Client class.
 
@@ -50,15 +50,15 @@ All CEMS API requests can be made using the `CEMS\Client` class. This class must
 
 ### API key Config
 
-    ```php
-    $client = new CEMS\Client($access_token, $apiUrl);
-    ```
+```php
+$client = new CEMS\Client($access_token, $apiUrl);
+```
 
 ### Email/Password Config
 
-    ```php
-    $client = new CEMS\Client($email, $password, $apiUrl);
-    ```
+```php
+$client = new CEMS\Client($email, $password, $apiUrl);
+```
 
 Your app users are almost ready to start signing!
 See below for the most common use cases for this wrapper.
@@ -74,29 +74,29 @@ You can create a RESTful request by using following method from an instance of C
 
 For example:
 
-    ```php
-    try {
-      $response= $client->get('events', array(
-        'category_id' => array(1, 2)
-      )); // CEMS\Response
-    catch (CEMS\Error $e) {
-    }
-    ```
+```php
+try {
+  $response= $client->get('events', array(
+    'category_id' => array(1, 2)
+  )); // CEMS\Response
+catch (CEMS\Error $e) {
+}
+```
 
 Or
 
-    ```php
-    $client->request('POST',"subscriptions", array(
-        'abc' => $abc
-    ));
-    $client->request('PUT',"subscriptions/$id", array(
-        'abc' => $abc
-    ));
-    $client->request('GET','subscriptions/find_by', array(
-        'customer_id'			=> $customer_id,
-        'subscriber_list_id'	=> $subscriber_list_id
-    ));
-    ```
+```php
+$client->request('POST',"subscriptions", array(
+    'abc' => $abc
+));
+$client->request('PUT',"subscriptions/$id", array(
+    'abc' => $abc
+));
+$client->request('GET','subscriptions/find_by', array(
+    'customer_id'			=> $customer_id,
+    'subscriber_list_id'	=> $subscriber_list_id
+));
+```
 
 Or using these alias below:
 
@@ -109,29 +109,29 @@ Or using these alias below:
 
 The request will automatically return a Response object contain JSON data return from API if success. Then you can retrieve the proper result by using the method `getObject($type='CEMS\Resource')` or `getObjectList($type='CEMS\Resource')`
 
-    ```php
-    $customer = $client->request('GET',"customers/$id')->getObject(); // CEMS\Object
+```php
+$customer = $client->request('GET',"customers/$id')->getObject(); // CEMS\Object
 
-    $customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\Customer
-    ```
+$customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\Customer
+```
 
 ### Retrieving fields returned from the API
 
 Using magic methods to set or get fields
 
-    ```php
-    $customer->name('Hoang Van Tien');
-    echo $customer->name();
-    ```
+```php
+$customer->name('Hoang Van Tien');
+echo $customer->name();
+```
 
 Or if you want to get all attributes in an array
 
-    ```php
-    foreach ($customers as $customer) {
-      print_r($customer->toArray());
-      // toObject()
-    }
-    ```
+```php
+foreach ($customers as $customer) {
+  print_r($customer->toArray());
+  // toObject()
+}
+```
 
 ##Testing
 ---------------------

@@ -15,6 +15,8 @@ class ClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @group Integration Test
+     * @covers Client::__construct
+     * @covers Client::getAccessToken
      */
     public function testAccessToken()
     {

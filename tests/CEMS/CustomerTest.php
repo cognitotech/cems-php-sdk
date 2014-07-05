@@ -15,7 +15,15 @@ use CEMS;
  */
 class CustomerTest extends AbstractResourceTest
 {
-
+    /**
+     * @covers Customer::_construct
+     * @covers magic Customer::__get
+     * @covers Client::post
+     * @covers Response::getObject
+     * @covers Customer::toArray
+     * @covers Customer::getPropertyArray
+     * @covers Customer::getPropertyNames
+     */
     public function testCreateCustomer()
     {
         $this->_resource=new CEMS\Customer(array(
@@ -40,6 +48,9 @@ class CustomerTest extends AbstractResourceTest
 
     /**
      * @depends testCreateCustomer
+     * @covers Client::get
+     * @covers Customer::_construct
+     * @covers magic Customer::__get
      */
     public function testGetSingleCustomer($customer)
     {
@@ -49,6 +60,10 @@ class CustomerTest extends AbstractResourceTest
         $this->assertEquals($this->_resource->id,$customer->id);
     }
 
+    /**
+     * @covers Collection::toArray
+     * @covers Response::getObjectList
+     */
     public function testFetchCustomerCollection()
     {
         #todo: return page num, cur page.
@@ -61,6 +76,8 @@ class CustomerTest extends AbstractResourceTest
 
     /**
      * @depends testCreateCustomer
+     * @covers Client::put
+     * @covers Customer::__set
      */
     public function testUpdateCustomer($customer)
     {
@@ -75,6 +92,7 @@ class CustomerTest extends AbstractResourceTest
 
     /**
      * @depends testCreateCustomer
+     * @covers Client::delete
      */
     public function testDeleteCustomer($customer)
     {
