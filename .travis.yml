@@ -17,4 +17,4 @@ before_install:
 before_script:
   - composer self-update
 script:
-- ./vendor/bin/phpunit
+  - phpunit
