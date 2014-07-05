@@ -14,6 +14,5 @@ before_install:
 before_script:
   - composer self-update
   - phpunit --version
-  - ./vendor/bin/phpunit --version
 script:
-  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php
+  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --configuration phpunit.xml --coverage-text
