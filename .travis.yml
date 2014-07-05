@@ -10,11 +10,10 @@ env:
   - secure: 0pfptFms4KHmy8gNtRIfhZlM50Ajiz5qndasck44+6Q6zqm+GMK+Fx+EA1XMjx1EEiOhS5EKv0kqmeqoFt6n0ZwBz/9RinT47SdEAZgUG+hiUZL/qe42nIWRvX42Kv1N0XsqlhMnTNRCbUzOGaAOgRC6ECH+iyXZihmatezP8xE=
 before_install:
 - cp phpunit.xml.sample phpunit.xml
-- wget http://pear.php.net/go-pear.phar
-- php go-pear.phar
-- sudo pear config-set auto_discover 1
-- sudo pear channel-discover pear.phpunit.de
-- sudo pear install --alldeps phpunit/PHPUnit
+- pear config-set auto_discover 1
+- pear channel-discover pear.phpunit.de
+- pear install --alldeps phpunit/PHPUnit
+- phpenv rehash
 - composer install
 before_script:
   - composer self-update
