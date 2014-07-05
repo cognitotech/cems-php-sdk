@@ -49,7 +49,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="21" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.6476684" vertical-offset="328" max-vertical-offset="714">
+            <state line="16" column="29" selection-start="952" selection-end="952" vertical-scroll-proportion="0.7927461" vertical-offset="51" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -143,9 +143,9 @@
         <option value="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Autoload.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/CustomerTest.php" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
   </component>
@@ -961,7 +961,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="21" selection-start="1608" selection-end="1608" vertical-scroll-proportion="0.6476684" vertical-offset="328" max-vertical-offset="714">
+        <state line="16" column="29" selection-start="952" selection-end="952" vertical-scroll-proportion="0.7927461" vertical-offset="51" max-vertical-offset="493">
           <folding />
         </state>
       </provider>

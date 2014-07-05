@@ -8,24 +8,12 @@ env:
   - secure: wx1+C1YP99DgszGLnuiPaJBB+B8y4X7iqsc740qCnW12KrHLJKO0dAvNG9p/wVH6uHzV+Xe3G/7idX+/W65ULTSj6LSwYOg/8tMojSdRZszgqdIsXMDcjkpzC7Oy8vE7sZ9v45x88tmKaI2Cf7W0XgyujRCjST4W0x/Rc20waek=
   - secure: yErMLvQPdizrS05oYOInK4rbIK5X7NOtWwYrmwgGkz3gKPrOl+tlooJ/M8xMVW79E/jlWM0btyQmWvD74hS2iVjM7QikeH8O+7ji7CjIvpQl//GEuHmTKwH82ZRreUXtj1JNAlXsGmmvz1QOYZoKi7opowulhFzZyDxL9wyNtUE=
   - secure: 0pfptFms4KHmy8gNtRIfhZlM50Ajiz5qndasck44+6Q6zqm+GMK+Fx+EA1XMjx1EEiOhS5EKv0kqmeqoFt6n0ZwBz/9RinT47SdEAZgUG+hiUZL/qe42nIWRvX42Kv1N0XsqlhMnTNRCbUzOGaAOgRC6ECH+iyXZihmatezP8xE=
-# see what we need: http://thrift.apache.org/docs/install/ubuntu
 before_install:
-- sudo apt-add-repository "deb http://archive.ubuntu.com/ubuntu/ trusty main restricted" -y
-- sudo apt-get update -qq
-- sudo apt-get install -qq libboost-dev libboost-test-dev libboost-program-options-dev libevent-dev automake libtool flex bison pkg-config g++ libssl-dev bc
-- dpkg -S /usr/include/boost/version.hpp
-# PHP
-- sudo apt-get install -qq php5-dev php5-cli phpunit php-pear
-- sudo pear channel-discover pear.phpunit.de
-- sudo pear channel-discover pear.symfony.com
-# - sudo pear channel-discover components.ez.no
-- sudo pear update-channels
-- sudo pear upgrade-all
-- sudo pear install --alldeps phpunit/PHPUnit
 - cp phpunit.xml.sample phpunit.xml
 - composer install
 before_script:
   - composer self-update
   - phpunit --version
+  - ./vendor/bin/phpunit --version
 script:
-  - phpunit
+  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php
