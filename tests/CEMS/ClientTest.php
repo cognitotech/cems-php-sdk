@@ -14,18 +14,13 @@ use CEMS;
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @group Integration Test
-     * @covers Client::__construct
+     * @group Sign In Test
      * @covers Client::getAccessToken
      */
     public function testAccessToken()
     {
-        /**
-         * @scenario Sign In Test
-         */
         $cemsClient = new CEMS\Client($_ENV['CLIENT_EMAIL'], $_ENV['CLIENT_PASSWORD'], $_ENV['API_URL']);
-        $token = $cemsClient->getAccessToken();
-        $this->assertEquals($token, $_ENV['API_KEY']);
+        $this->assertEquals($cemsClient->getAccessToken(), $_ENV['API_KEY']);
 
     }
 

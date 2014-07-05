@@ -13,5 +13,7 @@ before_install:
 - composer install
 before_script:
   - composer self-update
+  - phpunit --version
+  - ./vendor/bin/phpunit --version
 script:
-  - phpunit
+  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php

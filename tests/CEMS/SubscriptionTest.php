@@ -20,9 +20,6 @@ class SubscriptionTest extends AbstractResourceTest
     {
         $this->_resource=new CEMS\Subscription('');
         $this->_resource->name='';
-        $this->_resource->name='';
-        $this->_resource->name='';
-        $this->_resource->name='';
         $this->_client->post('/admin/subscriptions.json',$this->_resource->toArray());
     }
 
