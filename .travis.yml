@@ -15,4 +15,4 @@ before_script:
   - composer self-update
   - phpunit --version
 script:
-  - ./vendor/bin/phpunit --bootstrap ./vendor/autoload.php --configuration phpunit.xml --coverage-text
+  - phpunit
