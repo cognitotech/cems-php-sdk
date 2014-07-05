@@ -4,9 +4,17 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - hhvm
 
+env:
+  global:
+  - secure: yrgPPPQ7jsgiFneNKYLmvleSfIi4fpplQKOU6zddYM1yZ9YFXxkIvEOXLwmZRM4FgXhVFlds7dY8NrbXTB/YGIUMQcPwhy37SRpX0LvpQ5AQqsdYxc+M1FbYNsSVDJtPlg7HF9c+y/JHtgeg6Wekkf0uc0rak1WpfMGXtXCaAN0=
+  - secure: wx1+C1YP99DgszGLnuiPaJBB+B8y4X7iqsc740qCnW12KrHLJKO0dAvNG9p/wVH6uHzV+Xe3G/7idX+/W65ULTSj6LSwYOg/8tMojSdRZszgqdIsXMDcjkpzC7Oy8vE7sZ9v45x88tmKaI2Cf7W0XgyujRCjST4W0x/Rc20waek=
+  - secure: yErMLvQPdizrS05oYOInK4rbIK5X7NOtWwYrmwgGkz3gKPrOl+tlooJ/M8xMVW79E/jlWM0btyQmWvD74hS2iVjM7QikeH8O+7ji7CjIvpQl//GEuHmTKwH82ZRreUXtj1JNAlXsGmmvz1QOYZoKi7opowulhFzZyDxL9wyNtUE=
+  - secure: 0pfptFms4KHmy8gNtRIfhZlM50Ajiz5qndasck44+6Q6zqm+GMK+Fx+EA1XMjx1EEiOhS5EKv0kqmeqoFt6n0ZwBz/9RinT47SdEAZgUG+hiUZL/qe42nIWRvX42Kv1N0XsqlhMnTNRCbUzOGaAOgRC6ECH+iyXZihmatezP8xE=
+before_install:
+- cp phpunit.xml.sample phpunit.xml
+- composer install
 before_script:
   - composer self-update
-  - composer install
-script: phpunit
+script:
+- ./vendor/bin/phpunit
