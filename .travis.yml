@@ -10,9 +10,11 @@ env:
   - secure: 0pfptFms4KHmy8gNtRIfhZlM50Ajiz5qndasck44+6Q6zqm+GMK+Fx+EA1XMjx1EEiOhS5EKv0kqmeqoFt6n0ZwBz/9RinT47SdEAZgUG+hiUZL/qe42nIWRvX42Kv1N0XsqlhMnTNRCbUzOGaAOgRC6ECH+iyXZihmatezP8xE=
 before_install:
 - cp phpunit.xml.sample phpunit.xml
+- sudo pear channel-discover pear.symfony-project.com
+- sudo pear channel-discover components.ez.no
+- sudo pear install --alldeps phpunit/PHPUnit
 - composer install
 before_script:
   - composer self-update
-  - phpunit --version
 script:
   - phpunit
