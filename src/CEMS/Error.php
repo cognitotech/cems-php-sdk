@@ -2,17 +2,13 @@
 /**
  * Created by PhpStorm.
  * User: pnghai179
- * Date: 28/06/2014
- * Time: 23:57
+ * Date: 05/07/2014
+ * Time: 12:51
  */
 
 namespace CEMS;
 
-/**
- * Class Error
- * @package CEMS
- */
-class Error
-{
+
+class Error extends BaseException{
 
 } 

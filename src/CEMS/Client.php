@@ -9,7 +9,9 @@
 namespace CEMS;
 
 require_once dirname(dirname(dirname(__FILE__))) . '/vendor/autoload.php';
+
 use GuzzleHttp\Client as GuzzleClient;
+use GuzzleHttp\Exception as GuzzleException;
 
 /**
  * Class Client
@@ -67,7 +69,7 @@ class Client
         $this->_apiUrl = $api_url;
         $res = $this->_client->post($this->_apiUrl . '/staffs/sign_in.json', [
             'body' => [
-                'staff[email]' => $email,
+                'staff[email]'    => $email,
                 'staff[password]' => $password
             ]
         ]);
@@ -93,23 +95,36 @@ class Client
      */
     public function request($httpMethod, $path, $params = null, $version = null)
     {
-        $request = $this->_client->createRequest($httpMethod, $path);
-        $request->setHeader('Access_Token', $this->_accessToken);
         switch ($httpMethod) {
             case 'GET':
+                $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path);
                 $query = $request->getQuery();
+                $query->set('access_token', $this->_accessToken);
                 foreach ($params as $param => $value)
                     $query->set($param, $value);
                 break;
             default:
-                $postBody = $request->getBody();
+                //pre-process form data
+                $post_params = array();
+                $post_params['access_token'] = $this->_accessToken;
 
-                // $postBody is an instance of GuzzleHttp\Post\PostBodyInterface
-                foreach ($params as $param => $value)
-                    $pieces = explode("s/", $path);
-                $postBody->setField($pieces[0] . '[' . $param . ']', $value);
+                $api_callback = $this->getBetween($path, 'admin/', '.json');
+                $api_callback = substr(explode('/',$api_callback)[0],0,-1);
+                foreach ($params as $param => $value) {
+                    $post_params[$api_callback . '[' . $param . ']'] = $value;
+                }
+                $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path, ['body' => $post_params]);
         }
-        $res = $this->_client->send($request);
+
+        try {
+            $res = $this->_client->send($request);
+        } catch (GuzzleException\ClientException $e) {
+            throw new Error($e->getMessage(), serialize($e->getResponse()->json()['errors']), $e->getCode());
+        } catch (GuzzleException\RequestException $e) {
+            if ($e->hasResponse()) {
+                throw new Error($e->getMessage(), serialize($e->getResponse()->json()), $e->getCode());
+            } else throw new Error($e->getMessage(), '', $e->getCode());
+        }
         #TODO: parse error here
         $response = new Response($res->json());
 
@@ -125,7 +140,7 @@ class Client
      */
     public function get($path, $params = null, $version = null)
     {
-        return $this->request('GET', $path, $params = null, $version = null);
+        return $this->request('GET', $path, $params, $version);
     }
 
     /**
@@ -137,7 +152,7 @@ class Client
      */
     public function post($path, $params = null, $version = null)
     {
-        return $this->request('POST', $path, $params = null, $version = null);
+        return $this->request('POST', $path, $params, $version);
     }
 
     /**
@@ -149,7 +164,7 @@ class Client
      */
     public function put($path, $params = null, $version = null)
     {
-        return $this->request('PUT', $path, $params = null, $version = null);
+        return $this->request('PUT', $path, $params, $version);
     }
 
     /**
@@ -161,7 +176,7 @@ class Client
      */
     public function delete($path, $params = null, $version = null)
     {
-        return $this->request('DELETE', $path, $params = null, $version = null);
+        return $this->request('DELETE', $path, $params, $version);
     }
 
     /**
@@ -178,5 +193,24 @@ class Client
     public function getApiUrl()
     {
         return $this->_apiUrl;
+    }
+
+    /**
+     * @param $content
+     * @param $start
+     * @param $end
+     *
+     * @return string
+     */
+    private function getBetween($content, $start, $end)
+    {
+        $r = explode($start, $content);
+        if (isset($r[1])) {
+            $r = explode($end, $r[1]);
+
+            return $r[0];
+        }
+
+        return '';
     }
 }

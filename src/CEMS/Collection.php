@@ -25,7 +25,7 @@ class Collection
      */
     function __construct($RAW_response, $type = 'CEMS\Resource')
     {
-        $$this->_collection = array();
+        $this->_collection = array();
 
         $class = ucwords($type);
         if (class_exists($class)) {

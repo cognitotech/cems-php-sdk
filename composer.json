@@ -2,6 +2,9 @@
     "name": "siliconstraits/cems-php-sdk",
     "description": "PHP SDK for SSS CEMS platform",
     "version": "0.1",
+    "type": "library",
+    "keywords": ["sdk","cems"],
+    "homepage": "https://github.com/siliconstraits/cems-php-sdk",
     "require": {
         "guzzlehttp/guzzle": "4.*",
         "phpdocumentor/phpdocumentor": "2.*"

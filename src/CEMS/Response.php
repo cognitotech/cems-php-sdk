@@ -60,7 +60,7 @@ class Response
      */
     public function __get($key)
     {
-        if (array_key_exists($key, $this->_data)) {
+        if (array_key_exists($key, $this->_response)) {
             return $this->_response[$key];
         }
 
