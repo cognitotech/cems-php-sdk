@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Adding PHPUnit Integration Test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" afterPath="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CEMS/ClientTest.php" afterPath="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
     </list>
     <list id="51eb9362-814b-452f-bc50-9b90bb86d850" name="Failed commit: Default" comment="Adding PHPUnit Integration Test" />
     <list id="e5619590-9ee2-4987-b613-2af2b9893c06" name="Failed commit: Default (2)" comment="Adding PHPUnit Integration Test" />
@@ -44,16 +45,39 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="9" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+            <state line="9" column="9" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="493">
+              <folding>
+                <marker date="1404663917040" expanded="true" signature="31:415" placeholder="env:" />
+                <marker date="1404663917040" expanded="true" signature="38:415" placeholder="global:" />
+                <marker date="1404663917040" expanded="true" signature="786:1069" placeholder="before_install:" />
+                <marker date="1404663917040" expanded="true" signature="1070:1107" placeholder="before_script:" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="phpunit.xml.dist" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="phpunit.xml.dist" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
+      <file leaf-file-name="ClientTest.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/CEMS/ClientTest.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.5782313" vertical-offset="0" max-vertical-offset="588">
+            <state line="38" column="9" selection-start="908" selection-end="908" vertical-scroll-proportion="0.8790036" vertical-offset="67" max-vertical-offset="799">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractResourceTest.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="663">
               <folding />
             </state>
           </provider>
@@ -121,12 +145,12 @@
         <option value="$PROJECT_DIR$/tests/CEMS/EventTest.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Autoload.php" />
-        <option value="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/CustomerTest.php" />
-        <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php" />
         <option value="$PROJECT_DIR$/phpunit.xml.dist" />
         <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
+        <option value="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
       </list>
     </option>
   </component>
@@ -599,7 +623,12 @@
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="137" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
-          <folding />
+          <folding>
+            <marker date="1404663917040" expanded="true" signature="31:415" placeholder="env:" />
+            <marker date="1404663917040" expanded="true" signature="38:415" placeholder="global:" />
+            <marker date="1404663917040" expanded="true" signature="786:1069" placeholder="before_install:" />
+            <marker date="1404663917040" expanded="true" signature="1070:1107" placeholder="before_script:" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -801,11 +830,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7565" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CEMS/ClientTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="0" selection-start="648" selection-end="648" vertical-scroll-proportion="0.90555555" vertical-offset="99" max-vertical-offset="646" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Response.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="1.1805556" vertical-offset="102" max-vertical-offset="1343" />
@@ -814,11 +838,6 @@
     <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.5840708" vertical-offset="1502" max-vertical-offset="1853" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="0" selection-start="564" selection-end="564" vertical-scroll-proportion="0.460177" vertical-offset="218" max-vertical-offset="578" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Resource.php">
@@ -843,14 +862,33 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="9" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <folding />
+        <state line="9" column="9" selection-start="610" selection-end="610" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="493">
+          <folding>
+            <marker date="1404663917040" expanded="true" signature="31:415" placeholder="env:" />
+            <marker date="1404663917040" expanded="true" signature="38:415" placeholder="global:" />
+            <marker date="1404663917040" expanded="true" signature="786:1069" placeholder="before_install:" />
+            <marker date="1404663917040" expanded="true" signature="1070:1107" placeholder="before_script:" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.5782313" vertical-offset="0" max-vertical-offset="588">
+        <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="663">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/ClientTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="9" selection-start="908" selection-end="908" vertical-scroll-proportion="0.8790036" vertical-offset="67" max-vertical-offset="799">
           <folding />
         </state>
       </provider>
