@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Adding PHPUnit Integration Test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Adding PHPUnit Integration Test" />
     <list id="51eb9362-814b-452f-bc50-9b90bb86d850" name="Failed commit: Default" comment="Adding PHPUnit Integration Test" />
     <list id="e5619590-9ee2-4987-b613-2af2b9893c06" name="Failed commit: Default (2)" comment="Adding PHPUnit Integration Test" />
     <ignored path="cems-php-sdk.iws" />
@@ -497,7 +494,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5604575" sideWeight="0.49242425" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32026145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
