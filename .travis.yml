@@ -4,10 +4,10 @@ php:
 - 5.5
 env:
   global:
-  - secure: ivvgHewKVz+lbniE8GWKX3oiwix/ewzxpSLYQY7lXGn020OhKx5Kw3ZVHNbiuXn78Ma419Tx1HCmWBNMy7sZlK4xBFRUlkgq7rUpd9QpIIZ4d4fp5dU0B0GUEGMyJ3cg3FfRoZWp33l9BU7hiiSxDvRhQK19WCLBuGHxYe7EhZs=
-  - secure: aKbPYEZML6puetX1Pkh22IPPo3ePcnKbxY6lG33u1hqXS9278H4e3F7wxmtCn1J2VRAvLfsbgiTN0K4AV5AJcrf19WJDA2IwmDOAqDgt7+g0qNY9jLp8bHhhix26dIZcKFjGMKnL1JR1kn1OUdWwCBKY10rMVAmFvBqaeIfqupI=
-  - secure: KKUhrmmXGi5eFNC/Zv6XV4NWMc4OM0Km4UXWcVHjSO2oC9hqtRs/bED6mbTa1i5D3k1P/kh0VTzgNP64jEw6/Ns7Gk/S9FY2mmv6vFBFsCkS72sj/bgoezR+KtAYydqk7xKW6atErNyPrgVB+DQOZ11buxL0EkxFIqJViUS6Xx4=
-  - secure: cQCzwc71c5J6n7ILWQNXDsu8iOB9DrmN+9H5u8C9XpQowyYaXrvXCnevvlIQpzlcH8qm5ulJH53bwjLVVV7MBQmPtXR3p41Cdifay6VwbU/20Kza0vRLW/Cywljs0qFqq54pfg0Kw4V4OJbTevzs8iJFmJfyH8y7MTn8S/ZlWXs=
+  - secure: NDAm4ZPCxHSuAiPUHvzm8u334pfLL49Eawy4VHQlKhArWb0XGUkh40e2127ml5QUQQj2UKxS7XSEsxWvxDC27Nw0nli82FPtOoi7xNYGlIrxjp/cGRnoaaQqZZ0d/bTyD/tARnLTWjuRlo4vFprm8xKJy7lugIq3F740rDMFy18=
+  - secure: ArI2kGR1fpm7Z91zqj8ppPiR4kpT+0x4+R7tVOqwHmIyHhPVOo6bty7n7HFKzpM7pGcf2Ban+BcB772le0qLM9WCnN4Ty1reEqdjc8sL6E86q9UkGdA3pyec1pJh06aoLgsujunh/vwKP9u4YLwL3T7Xp4NWDeo9/tYeA9e4VeA=
+  - secure: PJI2V57XZ43gKxUUFMomEa+G+ngZlPx1Wfy3AoRWNxQVu6+VU8EsAZYg9gCEtxPRdk+icQd5HbblMIJFXjRVddpjDCrXwYfmD/jMpAGtcAS3XOpd/cwIhqTJ1MWq7Kb5V6RouDP57c4J6vu/vQozwv3fjoPTQ8sERI5nsjOPNWU=
+  - secure: mp786VZZsBmfnD7uIOyXAKHXJbI+PN15pgOeJO8woq8XRSBSfv+df9XJSgE0bahDvfLdFdVWpwkL8/ihbihSfWIRypLGH/iPfllyY6zQHPRGuyflDfZ/bhWKkMnnpnugqKgkJBO44rz0GVM9qPpLvK/BQPZdBFJdGSDMMrRk9PA=
 before_install:
 - cp phpunit.xml.sample phpunit.xml
 - pear config-set auto_discover 1
@@ -18,10 +18,6 @@ before_install:
 - phpenv rehash
 - composer install
 before_script:
-#- wget https://phar.phpunit.de/phpunit.phar
-#- sudo chmod +x phpunit.phar
-#- sudo mv phpunit.phar /usr/local/bin/phpunit
-#- phpenv rehash
 - composer self-update
 script:
 - phpunit
