@@ -100,8 +100,9 @@ class Client
                 $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path);
                 $query = $request->getQuery();
                 $query->set('access_token', $this->_accessToken);
-                foreach ($params as $param => $value)
-                    $query->set($param, $value);
+                if ($params!=null)
+                    foreach ($params as $param => $value)
+                        $query->set($param, $value);
                 break;
             default:
                 //pre-process form data
@@ -110,9 +111,10 @@ class Client
 
                 $api_callback = $this->getBetween($path, 'admin/', '.json');
                 $api_callback = substr(explode('/',$api_callback)[0],0,-1);
-                foreach ($params as $param => $value) {
-                    $post_params[$api_callback . '[' . $param . ']'] = $value;
-                }
+                if ($params!=null)
+                    foreach ($params as $param => $value) {
+                        $post_params[$api_callback . '[' . $param . ']'] = $value;
+                    }
                 $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path, ['body' => $post_params]);
         }
 
