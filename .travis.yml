@@ -14,11 +14,7 @@ before_install:
 - pear channel-discover pear.phpunit.de
 - pear install --alldeps phpunit/PHPUnit
 - pear install phpunit/PHP_CodeCoverage
-- pear install phpunit/File_Iterator
 - pear install phpunit/PHPUnit_MockObject
-- pear install phpunit/PHP_Invoker
-- pear install phpunit/PHP_Timer
-- pecl install phpunit/test_helpers
 - phpenv rehash
 - composer install
 before_script:
