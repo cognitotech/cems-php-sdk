@@ -14,12 +14,18 @@ before_install:
 - pear channel-discover pear.phpunit.de
 - pear install --alldeps phpunit/PHPUnit
 - pear install phpunit/PHP_CodeCoverage
+- pear install phpunit/File_Iterator
+- pear install phpunit/PHPUnit_MockObject
+- pear install phpunit/PHP_Invoker
+- pear install phpunit/PHP_Timer
+- pecl install phpunit/test_helpers
 - phpenv rehash
 - composer install
 before_script:
   - wget https://phar.phpunit.de/phpunit.phar
   - sudo chmod +x phpunit.phar
   - sudo mv phpunit.phar /usr/local/bin/phpunit
+  - phpenv rehash
   - composer self-update
 script:
   - phpunit
