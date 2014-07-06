@@ -4,18 +4,18 @@ php:
   - 5.5
 env:
   global:
-  - secure: yrgPPPQ7jsgiFneNKYLmvleSfIi4fpplQKOU6zddYM1yZ9YFXxkIvEOXLwmZRM4FgXhVFlds7dY8NrbXTB/YGIUMQcPwhy37SRpX0LvpQ5AQqsdYxc+M1FbYNsSVDJtPlg7HF9c+y/JHtgeg6Wekkf0uc0rak1WpfMGXtXCaAN0=
-  - secure: wx1+C1YP99DgszGLnuiPaJBB+B8y4X7iqsc740qCnW12KrHLJKO0dAvNG9p/wVH6uHzV+Xe3G/7idX+/W65ULTSj6LSwYOg/8tMojSdRZszgqdIsXMDcjkpzC7Oy8vE7sZ9v45x88tmKaI2Cf7W0XgyujRCjST4W0x/Rc20waek=
-  - secure: yErMLvQPdizrS05oYOInK4rbIK5X7NOtWwYrmwgGkz3gKPrOl+tlooJ/M8xMVW79E/jlWM0btyQmWvD74hS2iVjM7QikeH8O+7ji7CjIvpQl//GEuHmTKwH82ZRreUXtj1JNAlXsGmmvz1QOYZoKi7opowulhFzZyDxL9wyNtUE=
-  - secure: 0pfptFms4KHmy8gNtRIfhZlM50Ajiz5qndasck44+6Q6zqm+GMK+Fx+EA1XMjx1EEiOhS5EKv0kqmeqoFt6n0ZwBz/9RinT47SdEAZgUG+hiUZL/qe42nIWRvX42Kv1N0XsqlhMnTNRCbUzOGaAOgRC6ECH+iyXZihmatezP8xE=
+  - secure: XFL5qAP6m3ThLB2wkEs6qr+jIf+LMlj1Tt+N/1aUEg+1r+27RUYBdojJJLAr5cs2aCMliAegpU+Jjuqoww+0WNLMdELFy1q5KB26aQf/R4UGfQfeY7QUCVRvei1PmpeH5OExziAUrSEWpqz5gnHgRMXfOzKGRRBWJ0BSc0hgLDY=
+  - secure: E/IZrXtmiJKpCarB+nAD6VLZx3lQFQv3nCg0NbYvqXX/BdkV+NjjNL2Pq3D9cFkx8K4YpfeJMzoCQ6NBEliNWmhs82tlizD7JtmIuGZiK3k7qMp8Tf+y2v70/GleJHT2iCk9/9L14tngV0++tTJC31+qZHXmhArjcvJSXUgk6LM=
+  - secure: QneyoTpP7wbkyNEvSd3SbR8TE5YU9VcPd+8HnomzODBDx2/pdMexkuSpfxu61Pkudenh33+c/9NUzK0O8ZkcxVCfN7Exvv1jR2l/OI5X+NETftZfuU+aaJSIKKpcvuxUauJrzQWGG/8DSFthfSjwP/cSqZRr76EwaVf43cfG0k8=
+  - secure: px3JbUxXRXhtQY88v7yWPHQEaoMiTWBj/FM/57JJiTN/HUKaQkIuuBQtdbiUeQkfxrb5OD9AR+6zSk4Z+8BD3fAND0KZaHyy4ZTFFkySFR0OlSyM/6c5TPtOBIYgT/c1gnuu4jXaUfBNGmRraX0dBO6pObyMmxaVbbzIF7RfApM=
 before_install:
 - cp phpunit.xml.sample phpunit.xml
-- pear config-set auto_discover 1
-- pear channel-discover pear.phpunit.de
-- pear install --alldeps phpunit/PHPUnit
-- pear install phpunit/PHP_CodeCoverage
-- pear install phpunit/PHPUnit_MockObject
-- phpenv rehash
+#- pear config-set auto_discover 1
+#- pear channel-discover pear.phpunit.de
+#- pear install --alldeps phpunit/PHPUnit
+#- pear install phpunit/PHP_CodeCoverage
+#- pear install phpunit/PHPUnit_MockObject
+#- phpenv rehash
 - composer install
 before_script:
   - wget https://phar.phpunit.de/phpunit.phar

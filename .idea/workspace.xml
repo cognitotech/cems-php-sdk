@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Adding PHPUnit Integration Test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.travis.yml" afterPath="$PROJECT_DIR$/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="51eb9362-814b-452f-bc50-9b90bb86d850" name="Failed commit: Default" comment="Adding PHPUnit Integration Test" />
     <list id="e5619590-9ee2-4987-b613-2af2b9893c06" name="Failed commit: Default (2)" comment="Adding PHPUnit Integration Test" />
@@ -44,25 +45,16 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="24" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.76870745" vertical-offset="24" max-vertical-offset="612">
+            <state line="9" column="184" selection-start="789" selection-end="789" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CEMS/EventTest.php">
+      <file leaf-file-name="phpunit.xml.dist" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="1" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1513">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SubscriptionTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="49" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="884">
+            <state line="19" column="34" selection-start="719" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
               <folding />
             </state>
           </provider>
@@ -121,7 +113,6 @@
         <option value="$PROJECT_DIR$/tests/bootstrap.php" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/phpunit.xml.sample" />
-        <option value="$PROJECT_DIR$/phpunit.xml.dist" />
         <option value="$PROJECT_DIR$/tests/CEMS/ResourceTestAbstract.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Response.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Collection.php" />
@@ -135,6 +126,7 @@
         <option value="$PROJECT_DIR$/tests/CEMS/CustomerTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php" />
+        <option value="$PROJECT_DIR$/phpunit.xml.dist" />
         <option value="$PROJECT_DIR$/.travis.yml" />
       </list>
     </option>
@@ -764,26 +756,12 @@
         <state line="34" column="13" selection-start="677" selection-end="677" vertical-scroll-proportion="0.38958707" vertical-offset="363" max-vertical-offset="920" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.88082904" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="996" column="44" selection-start="35817" selection-end="35820" vertical-scroll-proportion="0.47091413" vertical-offset="16796" max-vertical-offset="56253" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml.sample">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="9" selection-start="577" selection-end="577" vertical-scroll-proportion="0.7046632" vertical-offset="0" max-vertical-offset="476">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
@@ -834,20 +812,6 @@
         <state line="36" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="1.1805556" vertical-offset="102" max-vertical-offset="1343" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="49" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="884">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CEMS/EventTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="1" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1513">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.5840708" vertical-offset="1502" max-vertical-offset="1853" />
@@ -873,9 +837,37 @@
         <state line="48" column="42" selection-start="2213" selection-end="2214" vertical-scroll-proportion="0.425" vertical-offset="663" max-vertical-offset="4097" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="49" selection-start="570" selection-end="570" vertical-scroll-proportion="-5.269231" vertical-offset="237" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml.sample">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="577" selection-end="577" vertical-scroll-proportion="0.46258503" vertical-offset="0" max-vertical-offset="588">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/EventTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="1" selection-start="218" selection-end="218" vertical-scroll-proportion="-0.65384614" vertical-offset="153" max-vertical-offset="1428">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="34" selection-start="719" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="24" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.76870745" vertical-offset="24" max-vertical-offset="612">
+        <state line="9" column="184" selection-start="789" selection-end="789" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
