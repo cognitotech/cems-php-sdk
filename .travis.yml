@@ -14,12 +14,12 @@ before_install:
 - pear channel-discover pear.phpunit.de
 - pear install --alldeps phpunit/PHPUnit
 - pear install phpunit/PHP_CodeCoverage
-- wget https://phar.phpunit.de/phpunit.phar
-- chmod +x phpunit.phar
-- mv phpunit.phar /usr/local/bin/phpunit
 - phpenv rehash
 - composer install
 before_script:
+  - wget https://phar.phpunit.de/phpunit.phar
+  - sudo chmod +x phpunit.phar
+  - sudo mv phpunit.phar /usr/local/bin/phpunit
   - composer self-update
 script:
   - phpunit
