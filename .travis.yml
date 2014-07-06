@@ -4,10 +4,10 @@ php:
   - 5.5
 env:
   global:
-  - secure: XFL5qAP6m3ThLB2wkEs6qr+jIf+LMlj1Tt+N/1aUEg+1r+27RUYBdojJJLAr5cs2aCMliAegpU+Jjuqoww+0WNLMdELFy1q5KB26aQf/R4UGfQfeY7QUCVRvei1PmpeH5OExziAUrSEWpqz5gnHgRMXfOzKGRRBWJ0BSc0hgLDY=
-  - secure: E/IZrXtmiJKpCarB+nAD6VLZx3lQFQv3nCg0NbYvqXX/BdkV+NjjNL2Pq3D9cFkx8K4YpfeJMzoCQ6NBEliNWmhs82tlizD7JtmIuGZiK3k7qMp8Tf+y2v70/GleJHT2iCk9/9L14tngV0++tTJC31+qZHXmhArjcvJSXUgk6LM=
-  - secure: QneyoTpP7wbkyNEvSd3SbR8TE5YU9VcPd+8HnomzODBDx2/pdMexkuSpfxu61Pkudenh33+c/9NUzK0O8ZkcxVCfN7Exvv1jR2l/OI5X+NETftZfuU+aaJSIKKpcvuxUauJrzQWGG/8DSFthfSjwP/cSqZRr76EwaVf43cfG0k8=
-  - secure: px3JbUxXRXhtQY88v7yWPHQEaoMiTWBj/FM/57JJiTN/HUKaQkIuuBQtdbiUeQkfxrb5OD9AR+6zSk4Z+8BD3fAND0KZaHyy4ZTFFkySFR0OlSyM/6c5TPtOBIYgT/c1gnuu4jXaUfBNGmRraX0dBO6pObyMmxaVbbzIF7RfApM=
+  - secure: "XFL5qAP6m3ThLB2wkEs6qr+jIf+LMlj1Tt+N/1aUEg+1r+27RUYBdojJJLAr5cs2aCMliAegpU+Jjuqoww+0WNLMdELFy1q5KB26aQf/R4UGfQfeY7QUCVRvei1PmpeH5OExziAUrSEWpqz5gnHgRMXfOzKGRRBWJ0BSc0hgLDY="
+  - secure: "E/IZrXtmiJKpCarB+nAD6VLZx3lQFQv3nCg0NbYvqXX/BdkV+NjjNL2Pq3D9cFkx8K4YpfeJMzoCQ6NBEliNWmhs82tlizD7JtmIuGZiK3k7qMp8Tf+y2v70/GleJHT2iCk9/9L14tngV0++tTJC31+qZHXmhArjcvJSXUgk6LM="
+  - secure: "QneyoTpP7wbkyNEvSd3SbR8TE5YU9VcPd+8HnomzODBDx2/pdMexkuSpfxu61Pkudenh33+c/9NUzK0O8ZkcxVCfN7Exvv1jR2l/OI5X+NETftZfuU+aaJSIKKpcvuxUauJrzQWGG/8DSFthfSjwP/cSqZRr76EwaVf43cfG0k8="
+  - secure: "px3JbUxXRXhtQY88v7yWPHQEaoMiTWBj/FM/57JJiTN/HUKaQkIuuBQtdbiUeQkfxrb5OD9AR+6zSk4Z+8BD3fAND0KZaHyy4ZTFFkySFR0OlSyM/6c5TPtOBIYgT/c1gnuu4jXaUfBNGmRraX0dBO6pObyMmxaVbbzIF7RfApM="
 before_install:
 - cp phpunit.xml.sample phpunit.xml
 #- pear config-set auto_discover 1

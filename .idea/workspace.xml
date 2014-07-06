@@ -45,16 +45,7 @@
       <file leaf-file-name=".travis.yml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="184" selection-start="789" selection-end="789" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="phpunit.xml.dist" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="34" selection-start="719" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+            <state line="9" column="137" selection-start="748" selection-end="748" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
               <folding />
             </state>
           </provider>
@@ -511,7 +502,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5604575" sideWeight="0.49242425" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32026145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -860,14 +851,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="34" selection-start="719" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
+        <state line="19" column="34" selection-start="719" selection-end="734" vertical-scroll-proportion="0.54931974" vertical-offset="0" max-vertical-offset="588">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="184" selection-start="789" selection-end="789" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
+        <state line="9" column="137" selection-start="748" selection-end="748" vertical-scroll-proportion="0.335034" vertical-offset="24" max-vertical-offset="612">
           <folding />
         </state>
       </provider>
