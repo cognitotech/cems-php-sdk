@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Adding PHPUnit Integration Test">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" afterPath="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
+    <list default="true" id="1a6fd85f-2b51-4b52-bb27-f19be8e204ee" name="Default" comment="Update Json, no near phpdoc">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CEMS/BaseException.php" afterPath="$PROJECT_DIR$/src/CEMS/BaseException.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CEMS/Client.php" afterPath="$PROJECT_DIR$/src/CEMS/Client.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/CEMS/ClientTest.php" afterPath="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cems-php-sdk.iml" afterPath="$PROJECT_DIR$/.idea/cems-php-sdk.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/pnghai.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/pnghai.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="51eb9362-814b-452f-bc50-9b90bb86d850" name="Failed commit: Default" comment="Adding PHPUnit Integration Test" />
     <list id="e5619590-9ee2-4987-b613-2af2b9893c06" name="Failed commit: Default (2)" comment="Adding PHPUnit Integration Test" />
@@ -43,28 +46,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CustomerTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="-15.076923" vertical-offset="1223" max-vertical-offset="1785">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Client.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="21" selection-start="3787" selection-end="3787" vertical-scroll-proportion="0.48576513" vertical-offset="1869" max-vertical-offset="3689">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AbstractResourceTest.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="663">
+            <state line="149" column="25" selection-start="4478" selection-end="4478" vertical-scroll-proportion="4.4916387" vertical-offset="2157" max-vertical-offset="7482">
               <folding />
             </state>
           </provider>
@@ -84,6 +69,7 @@
       <command text="c update" />
       <command text="c install " />
       <command text="php -v" />
+      <command text="c install" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
@@ -121,13 +107,10 @@
         <option value="$PROJECT_DIR$/test/CEMS/SubscriptionTest.php" />
         <option value="$PROJECT_DIR$/test/CEMS/CustomerTest.php" />
         <option value="$PROJECT_DIR$/tests/bootstrap.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/phpunit.xml.sample" />
         <option value="$PROJECT_DIR$/tests/CEMS/ResourceTestAbstract.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Response.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Collection.php" />
-        <option value="$PROJECT_DIR$/src/CEMS/Error.php" />
-        <option value="$PROJECT_DIR$/src/CEMS/BaseException.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/EventTest.php" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Autoload.php" />
@@ -137,11 +120,14 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
+        <option value="$PROJECT_DIR$/composer.json" />
+        <option value="$PROJECT_DIR$/src/CEMS/Error.php" />
+        <option value="$PROJECT_DIR$/src/CEMS/BaseException.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Client.php" />
       </list>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="Xampp PHP">
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="xampp">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
@@ -205,10 +191,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1376" />
-    <option name="height" value="744" />
+    <option name="x" value="65" />
+    <option name="y" value="-4" />
+    <option name="width" value="1295" />
+    <option name="height" value="772" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -294,7 +280,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -303,77 +288,18 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="cems-php-sdk" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CEMS" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="coverage" />
+    <property name="options.lastSelected" value="Configurable.PHP" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/phpunit.xml.dist" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
     <property name="SearchEverywhereHistory" value="getObject" />
@@ -397,6 +323,7 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1004" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
+    <property name="ChangesBrowser.SHOW_FLATTEN" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -434,6 +361,10 @@
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
       <method />
     </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
@@ -492,7 +423,11 @@
       <created>1404465817162</created>
       <updated>1404465817162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Update Json, no near phpdoc">
+      <created>1404757106500</created>
+      <updated>1404757106500</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -516,31 +451,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="65" y="-4" width="1295" height="772" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5604575" sideWeight="0.49242425" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32026145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22181553" sideWeight="0.19970194" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2579666" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28006458" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22230652" sideWeight="0.50121653" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32598424" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32831326" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16009104" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32594937" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -561,9 +496,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22181553" sideWeight="0.19970194" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23596358" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -584,7 +519,8 @@
     <MESSAGE value="Generate  new mock to complete 2" />
     <MESSAGE value="Hiding critical data" />
     <MESSAGE value="Adding PHPUnit Integration Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding PHPUnit Integration Test" />
+    <MESSAGE value="Update Json, no near phpdoc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update Json, no near phpdoc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -607,11 +543,69 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="137" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120">
+        <state line="84" column="92" selection-start="2024" selection-end="2024" vertical-scroll-proportion="0.0" vertical-offset="2436" max-vertical-offset="6960">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="9" selection-start="2102" selection-end="2102" vertical-scroll-proportion="0.0" vertical-offset="2494" max-vertical-offset="6902">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="18" selection-start="1064" selection-end="1064" vertical-scroll-proportion="0.0" vertical-offset="1624" max-vertical-offset="6467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.0" vertical-offset="2900" max-vertical-offset="3161" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="21" selection-start="3787" selection-end="3787" vertical-scroll-proportion="0.0" vertical-offset="3828" max-vertical-offset="6467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="14" selection-start="271" selection-end="271" vertical-scroll-proportion="0.0" vertical-offset="13" max-vertical-offset="1073" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="725" max-vertical-offset="1276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3161" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="132" column="21" selection-start="3787" selection-end="3787" vertical-scroll-proportion="0.0" vertical-offset="3828" max-vertical-offset="6467">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="725" max-vertical-offset="1276" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="137" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Response.php">
@@ -669,94 +663,14 @@
         <state line="12" column="16" selection-start="152" selection-end="152" vertical-scroll-proportion="-4.375" vertical-offset="0" max-vertical-offset="270" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="20" selection-start="60" selection-end="67" vertical-scroll-proportion="0.1878453" vertical-offset="0" max-vertical-offset="362" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="9" selection-start="1280" selection-end="1280" vertical-scroll-proportion="-0.3259053" vertical-offset="746" max-vertical-offset="1105" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_files.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="385" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.562674" vertical-offset="561" max-vertical-offset="19584" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="359" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="7" selection-start="33" selection-end="33" vertical-scroll-proportion="0.05782313" vertical-offset="0" max-vertical-offset="588" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="43" selection-start="109" selection-end="109" vertical-scroll-proportion="0.14166667" vertical-offset="0" max-vertical-offset="360" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="33" selection-start="774" selection-end="774" vertical-scroll-proportion="1.0833334" vertical-offset="86" max-vertical-offset="646" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Subscriber/HttpError.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="9" selection-start="935" selection-end="935" vertical-scroll-proportion="0.6462396" vertical-offset="244" max-vertical-offset="629" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Customer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="16" selection-start="148" selection-end="148" vertical-scroll-proportion="0.33147633" vertical-offset="0" max-vertical-offset="359" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Framework/Assert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2135" column="0" selection-start="69829" selection-end="69829" vertical-scroll-proportion="0.35654595" vertical-offset="35657" max-vertical-offset="47770" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Post/PostBody.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="232" selection-end="232" vertical-scroll-proportion="-4.877437" vertical-offset="1887" max-vertical-offset="4862" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Post/PostBodyInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2278" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="24" selection-start="4417" selection-end="4417" vertical-scroll-proportion="134.61539" vertical-offset="5710" max-vertical-offset="6069" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/ClientInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-7.5710306" vertical-offset="2718" max-vertical-offset="3077" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Message/MessageFactory.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="9" selection-start="1946" selection-end="1946" vertical-scroll-proportion="-7.1977715" vertical-offset="3621" max-vertical-offset="5780" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CEMS/Error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.2125" vertical-offset="0" max-vertical-offset="560" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
@@ -782,31 +696,6 @@
         <state line="127" column="0" selection-start="3186" selection-end="3284" vertical-scroll-proportion="0.23545706" vertical-offset="2346" max-vertical-offset="2992" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="5" selection-start="263" selection-end="263" vertical-scroll-proportion="0.425" vertical-offset="0" max-vertical-offset="884" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/src/CodeCoverage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14790" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1020" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/build/travis-ci.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/php-code-coverage/tests/PHP/CodeCoverageTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7565" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Response.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="549" selection-end="549" vertical-scroll-proportion="1.1805556" vertical-offset="102" max-vertical-offset="1343" />
@@ -815,11 +704,6 @@
     <entry file="file://$PROJECT_DIR$/src/CEMS/Resource.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="7" selection-start="642" selection-end="642" vertical-scroll-proportion="0.33055556" vertical-offset="527" max-vertical-offset="1428" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Autoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="42" selection-start="2213" selection-end="2214" vertical-scroll-proportion="0.425" vertical-offset="663" max-vertical-offset="4097" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CEMS/SubscriptionTest.php">
@@ -834,42 +718,60 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.5782313" vertical-offset="0" max-vertical-offset="588">
-          <folding />
-        </state>
+        <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="725" max-vertical-offset="1276" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="786" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/CEMS/ClientTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="22" selection-start="670" selection-end="670" vertical-scroll-proportion="-12.461538" vertical-offset="84" max-vertical-offset="799">
-          <folding />
-        </state>
+        <state line="10" column="0" selection-start="786" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/CEMS/CustomerTest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="-15.076923" vertical-offset="1223" max-vertical-offset="1785">
+        <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.0" vertical-offset="2900" max-vertical-offset="3161" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="298" selection-end="298" vertical-scroll-proportion="0.6526316" vertical-offset="13" max-vertical-offset="1073" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="7" selection-end="65" vertical-scroll-proportion="0.09698997" vertical-offset="0" max-vertical-offset="598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="150" selection-end="150" vertical-scroll-proportion="0.5819398" vertical-offset="0" max-vertical-offset="598">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/phpunit.xml.sample">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="812" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/CEMS/ClientTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="9" selection-start="123" selection-end="123" vertical-scroll-proportion="19.333334" vertical-offset="812" max-vertical-offset="1595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/BaseException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="29" selection-start="788" selection-end="788" vertical-scroll-proportion="0.28428093" vertical-offset="1135" max-vertical-offset="1914">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="21" selection-start="3787" selection-end="3787" vertical-scroll-proportion="0.48576513" vertical-offset="1869" max-vertical-offset="3689">
+        <state line="149" column="25" selection-start="4478" selection-end="4478" vertical-scroll-proportion="4.4916387" vertical-offset="2157" max-vertical-offset="7482">
           <folding />
         </state>
       </provider>

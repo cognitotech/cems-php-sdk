@@ -17,6 +17,7 @@ use Exception;
 class BaseException extends Exception
 {
     protected $_name;
+    protected $_message;
 
     function __construct($name, $message, $code = 0, Exception $previous = null) {
         $this->_name = $name;
@@ -41,6 +42,19 @@ class BaseException extends Exception
      * @ignore
      */
     public function __toString() {
-        return get_class($this) . ": [{$this->_name}] {$this->_message}\n";
+        $dump=$this->varDumpToString($this->_message);
+        return get_class($this) . ": [{$this->_name}] {$dump}\n";
+    }
+
+    /**
+     * Helper for export var_dump object to string
+     * @param $var
+     * @return string
+     */
+    public function varDumpToString ($var)
+    {
+        ob_start();
+        var_dump($var);
+        return ob_get_clean();
     }
 }

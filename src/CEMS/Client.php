@@ -7,9 +7,6 @@
  */
 
 namespace CEMS;
-
-require_once dirname(dirname(dirname(__FILE__))) . '/vendor/autoload.php';
-
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception as GuzzleException;
 
@@ -59,26 +56,41 @@ class Client
     }
 
     /**
+     * Construct new Client Object
      * @param string $email
      * @param string $password
      * @param string $api_url
+     *
+     * @throws Error CEMS\Error
+     *
+     * @return Client Client object
      */
     function __construct3($email = '', $password = '', $api_url = '')
     {
 
         $this->_apiUrl = $api_url;
-        $res = $this->_client->post($this->_apiUrl . '/staffs/sign_in.json', [
-            'body' => [
-                'staff[email]'    => $email,
-                'staff[password]' => $password
-            ]
-        ]);
-        #TODO : put exception here
-        echo $res->getStatusCode(); // 201
-        echo $res->getHeader('content-type');
-        $JSON_response = $res->json();
+        try {
+            $res = $this->_client->post($this->_apiUrl . '/staffs/sign_in.json', [
+                'body' => [
+                    'staff[email]'    => $email,
+                    'staff[password]' => $password
+                ]
+            ]);
+        }
+        catch (GuzzleException\ClientException $e) {
+            throw new Error('ClientException: '.$e->getMessage(), $e->getResponse()->json()['errors'], $e->getCode());
+        }
+        catch (GuzzleException\RequestException $e) {
+            if ($e->hasResponse()) {
+                throw new Error('Bad Response: '.$e->getMessage(), $e->getResponse()->json(), $e->getCode());
+            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e->getMessage(), $e->getRequest(), $e->getCode());
+        }
+        if (isset($res))
+        {
+            $JSON_response = $res->json();
 
-        $this->_accessToken = $JSON_response['access_token'];
+            $this->_accessToken = $JSON_response['access_token'];
+        }
     }
 
     function __destruct()
@@ -86,12 +98,15 @@ class Client
     }
 
     /**
+     * Request method
      * @param      $httpMethod
      * @param      $path
      * @param null $params
      * @param null $version
      *
-     * @return Response
+     * @throws Error CEMS\Error
+     *
+     * @return Response return CEMS\Response
      */
     public function request($httpMethod, $path, $params = null, $version = null)
     {
@@ -120,15 +135,17 @@ class Client
 
         try {
             $res = $this->_client->send($request);
-        } catch (GuzzleException\ClientException $e) {
-            throw new Error($e->getMessage(), serialize($e->getResponse()->json()['errors']), $e->getCode());
-        } catch (GuzzleException\RequestException $e) {
-            if ($e->hasResponse()) {
-                throw new Error($e->getMessage(), serialize($e->getResponse()->json()), $e->getCode());
-            } else throw new Error($e->getMessage(), '', $e->getCode());
         }
-        #TODO: parse error here
-        $response = new Response($res->json());
+        catch (GuzzleException\ClientException $e) {
+            throw new Error('ClientException: '.$e->getMessage(), $e->getResponse()->json()['errors'], $e->getCode());
+        }
+        catch (GuzzleException\RequestException $e) {
+            if ($e->hasResponse()) {
+                throw new Error('Bad Response: '.$e->getMessage(), $e->getResponse()->json(), $e->getCode());
+            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e->getMessage(), $e->getRequest(), $e->getCode());
+        }
+        if (isset($res))
+            $response = new Response($res->json());
 
         return $response;
     }
