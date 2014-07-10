@@ -21,6 +21,7 @@ class BaseException extends Exception
 
     function __construct($name, $message, $code = 0, Exception $previous = null) {
         $this->_name = $name;
+        $this->_message=$message;
 
         // make sure everything is assigned properly
         parent::__construct($message, $code, $previous);

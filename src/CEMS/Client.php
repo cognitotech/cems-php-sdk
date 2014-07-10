@@ -136,12 +136,15 @@ class Client
         try {
             $res = $this->_client->send($request);
         } catch (GuzzleException\ClientException $e) {
-            throw new Error('ClientException: '.$e, $e->getCode(),$e->getPrevious());
+            //catch error 404
+            $error_message=$e->getResponse()->json();
+            throw new Error('ClientException',$error_message['error'], $e->getCode(),$e->getPrevious());
         }
-        catch (GuzzleException\RequestException $e) {
-            if ($e->hasResponse()) {
-                throw new Error('Bad Response: '.$e, $e->getCode(),$e->getPrevious());
-            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e, $e->getCode(),$e->getPrevious());
+        catch (GuzzleException\ServerErrorResponseException $e){
+            throw new Error("ServerErrorResponseException: {$this->_apiUrl} ",$e, $e->getCode(),$e->getPrevious());
+        }
+        catch (GuzzleException\BadResponseException $e) {
+                throw new Error('BadResponseException',$e->getResponse(), $e->getCode(),$e->getPrevious());
         }
         $response = new Response($res->json());
         return $response;
