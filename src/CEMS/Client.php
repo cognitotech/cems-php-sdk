@@ -61,7 +61,9 @@ class Client
      * @param string $password
      * @param string $api_url
      *
-     * @throws Error CEMS\Error
+     * @throws AuthorizeException
+     * @throws ServerException
+     * @throws Error
      *
      * @return Client Client object
      */
@@ -76,14 +78,14 @@ class Client
                     'staff[password]' => $password
                 ]
             ]);
-        }
-        catch (GuzzleException\ClientException $e) {
-            throw new Error('ClientException: '.$e, $e->getCode(),$e->getPrevious());
-        }
-        catch (GuzzleException\RequestException $e) {
-            if ($e->hasResponse()) {
-                throw new Error('Bad Response: '.$e, $e->getCode(),$e->getPrevious());
-            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e, $e->getCode(),$e->getPrevious());
+        } catch (GuzzleException\ClientException $e) {
+            //catch error 404
+            $error_message=$e->getResponse()->json();
+            throw new AuthorizeException($error_message['error'], $e->getCode(),$e->getPrevious());
+        } catch (GuzzleException\ServerErrorResponseException $e){
+            throw new ServerException($e, $e->getCode(),$e->getPrevious());
+        } catch (GuzzleException\BadResponseException $e) {
+            throw new Error($e->getResponse(), $e->getCode(),$e->getPrevious());
         }
         if (isset($res))
         {
@@ -104,7 +106,9 @@ class Client
      * @param null $params
      * @param null $version
      *
-     * @throws Error CEMS\Error
+     * @throws ClientException
+     * @throws ServerException
+     * @throws Error
      *
      * @return Response return CEMS\Response
      */
@@ -138,13 +142,13 @@ class Client
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
             $error_message=$e->getResponse()->json();
-            throw new Error('ClientException',$error_message['error'], $e->getCode(),$e->getPrevious());
+            throw new ClientException($error_message['error'], $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\ServerErrorResponseException $e){
-            throw new Error("ServerErrorResponseException: {$this->_apiUrl} ",$e, $e->getCode(),$e->getPrevious());
+            throw new ServerException($e, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\BadResponseException $e) {
-                throw new Error('BadResponseException',$e->getResponse(), $e->getCode(),$e->getPrevious());
+                throw new Error($e->getResponse(), $e->getCode(),$e->getPrevious());
         }
         $response = new Response($res->json());
         return $response;
