@@ -78,12 +78,12 @@ class Client
             ]);
         }
         catch (GuzzleException\ClientException $e) {
-            throw new Error('ClientException: '.$e->getMessage(), $e->getResponse()->json()['errors'], $e->getCode());
+            throw new Error('ClientException: '.$e, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\RequestException $e) {
             if ($e->hasResponse()) {
-                throw new Error('Bad Response: '.$e->getMessage(), $e->getResponse()->json(), $e->getCode());
-            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e->getMessage(), $e->getRequest(), $e->getCode());
+                throw new Error('Bad Response: '.$e, $e->getCode(),$e->getPrevious());
+            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e, $e->getCode(),$e->getPrevious());
         }
         if (isset($res))
         {
@@ -135,18 +135,15 @@ class Client
 
         try {
             $res = $this->_client->send($request);
-        }
-        catch (GuzzleException\ClientException $e) {
-            throw new Error('ClientException: '.$e->getMessage(), $e->getResponse()->json()['errors'], $e->getCode());
+        } catch (GuzzleException\ClientException $e) {
+            throw new Error('ClientException: '.$e, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\RequestException $e) {
             if ($e->hasResponse()) {
-                throw new Error('Bad Response: '.$e->getMessage(), $e->getResponse()->json(), $e->getCode());
-            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e->getMessage(), $e->getRequest(), $e->getCode());
+                throw new Error('Bad Response: '.$e, $e->getCode(),$e->getPrevious());
+            } else throw new Error("Bad Request: {$this->_apiUrl} ".$e, $e->getCode(),$e->getPrevious());
         }
-        if (isset($res))
-            $response = new Response($res->json());
-
+        $response = new Response($res->json());
         return $response;
     }
 

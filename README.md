@@ -76,10 +76,15 @@ For example:
 
 ```php
 try {
-  $response= $client->get('events', array(
-    'category_id' => array(1, 2)
-  )); // CEMS\Response
+  $response= $client->get(
+    'events',
+    array(
+        'category_id' => array(1, 2)
+    )
+  ); // CEMS\Response
+}
 catch (CEMS\Error $e) {
+    echo $e;
 }
 ```
 
