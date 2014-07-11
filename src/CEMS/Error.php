@@ -19,7 +19,7 @@ class Error extends BaseException{
     public function __toString() {
 
         $dump=$this->varDumpToString($this->_message);
-        return __CLASS__. ":[{$this->_code}]: {$dump}\n";
+        return get_class($this). ":[{$this->_code}]: {$dump}\n";
     }
 
     /**

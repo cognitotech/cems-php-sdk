@@ -34,14 +34,8 @@ class BaseException extends Exception
      */
     public function getName()
     {
-        return __CLASS__;
+        return get_class($this);
     }
-
-    /**
-     * Custom string representation of object
-     *
-     * @return string
-     */
 
     /**
      * Helper function to get right exception raise from CEMS API
@@ -55,11 +49,25 @@ class BaseException extends Exception
             $messages=$json['error'];
         if (isset($json['errors']))
             $messages=$json['errors'];
-
-        return serialize($messages);
+        $result=array();
+        foreach ($messages as $k=>$v)
+            if ($v!=null)
+            {
+                if (is_array($v))
+                {
+                    $error_text=array();
+                    foreach ($v as $error)
+                        array_push($error_text,$error);
+                    $error_text=implode($error_text,',');
+                    array_push($result,"$k:$error_text");
+                }
+                else array_push($result,"$k:$v");
+            }
+        $result=implode($result,';');
+        return $result;
     }
     public function __toString() {
-        return __CLASS__. ": [{$this->code}]: {$this->getFormattedMessage()}\n";
+        return get_class($this). ": [{$this->code}]: {$this->getFormattedMessage()}";
     }
 
 }

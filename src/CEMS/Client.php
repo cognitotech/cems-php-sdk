@@ -80,15 +80,8 @@ class Client
             ]);
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
-            $error_message=$e->getResponse()->json();
-            if (isset($error_message['error']))
-                $error_message=$error_message['error'];
-            else
-                if (isset($error_message['errors']))
-                    $error_message=$error_message['errors'];
-                else
-                    $error_message=serialize($error_message);
-            throw new AuthorizeException($error_message['error'], $e->getCode(),$e->getPrevious());
+            $error_message=$e->getResponse();
+            throw new AuthorizeException($error_message, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\ServerErrorResponseException $e){
             throw new ServerException($e, $e->getCode(),$e->getPrevious());
@@ -150,14 +143,7 @@ class Client
             $res = $this->_client->send($request);
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
-            $error_message=$e->getResponse()->json();
-            if (isset($error_message['error']))
-                $error_message=$error_message['error'];
-            else
-            if (isset($error_message['errors']))
-                $error_message=$error_message['errors'];
-            else
-                $error_message=serialize($error_message);
+            $error_message=$e->getResponse();
             throw new ClientException($error_message, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\ServerErrorResponseException $e){
