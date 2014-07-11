@@ -44,10 +44,8 @@
       <file leaf-file-name="Client.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="140" column="52" selection-start="3985" selection-end="3985" vertical-scroll-proportion="1.722973" vertical-offset="1700" max-vertical-offset="4660">
-              <folding>
-                <element signature="e#109#147#0" expanded="true" />
-              </folding>
+            <state line="146" column="27" selection-start="4253" selection-end="4253" vertical-scroll-proportion="0.5687732" vertical-offset="4334" max-vertical-offset="7424">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -108,8 +106,6 @@
         <option value="$PROJECT_DIR$/tests/CEMS/ResourceTestAbstract.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Response.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Collection.php" />
-        <option value="$PROJECT_DIR$/src/CEMS/Error.php" />
-        <option value="$PROJECT_DIR$/src/CEMS/BaseException.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/EventTest.php" />
         <option value="$PROJECT_DIR$/vendor/phpunit/phpunit/PHPUnit/Autoload.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/CustomerTest.php" />
@@ -119,6 +115,11 @@
         <option value="$PROJECT_DIR$/tests/CEMS/AbstractResourceTest.php" />
         <option value="$PROJECT_DIR$/tests/CEMS/ClientTest.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/CEMS/ServerException.php" />
+        <option value="$PROJECT_DIR$/src/CEMS/AuthorizeException.php" />
+        <option value="$PROJECT_DIR$/src/CEMS/Error.php" />
+        <option value="$PROJECT_DIR$/src/CEMS/ClientException.php" />
+        <option value="$PROJECT_DIR$/src/CEMS/BaseException.php" />
         <option value="$PROJECT_DIR$/src/CEMS/Client.php" />
       </list>
     </option>
@@ -187,9 +188,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
+    <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="width" value="1295" />
+    <option name="height" value="684" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -385,6 +387,10 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug" singleton="true">
       <method />
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" working-dir="">
+      <browser start="false" url="" with-js-debugger="false" />
+      <method />
+    </configuration>
     <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
@@ -465,15 +471,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="65" y="24" width="1295" height="684" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5604575" sideWeight="0.49242425" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32026145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22181553" sideWeight="0.19970194" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28030303" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28652138" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22230652" sideWeight="0.50121653" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -481,14 +487,14 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="PHP-CGI Server" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16009104" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3267974" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -510,9 +516,9 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22181553" sideWeight="0.19970194" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23596358" sideWeight="0.80029804" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3271605" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287037" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -556,21 +562,6 @@
     </PATH>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="137" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="120" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CEMS/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="0" selection-start="535" selection-end="535" vertical-scroll-proportion="0.0" vertical-offset="525" max-vertical-offset="855" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CEMS/Response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="235" selection-end="235" vertical-scroll-proportion="0.0" vertical-offset="224" max-vertical-offset="756" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state line="9" column="32" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="697" />
@@ -701,11 +692,6 @@
         <state line="72" column="9" selection-start="1946" selection-end="1946" vertical-scroll-proportion="-7.1977715" vertical-offset="3621" max-vertical-offset="5780" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CEMS/Error.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="0" selection-start="146" selection-end="146" vertical-scroll-proportion="0.2125" vertical-offset="0" max-vertical-offset="560" />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/Core_c.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="194" column="20" selection-start="5274" selection-end="5274" vertical-scroll-proportion="0.35555556" vertical-offset="3170" max-vertical-offset="5984" />
@@ -779,11 +765,6 @@
         <state line="25" column="8" selection-start="488" selection-end="740" vertical-scroll-proportion="0.0" vertical-offset="500" max-vertical-offset="880" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/phpunit.xml.dist">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="35" selection-start="790" selection-end="810" vertical-scroll-proportion="0.5782313" vertical-offset="0" max-vertical-offset="588" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="0" selection-start="786" selection-end="801" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="561" />
@@ -795,11 +776,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="2351" selection-end="2351" vertical-scroll-proportion="0.75382006" vertical-offset="2020" max-vertical-offset="3828" />
-      </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="2351" selection-end="2351" vertical-scroll-proportion="0.75382006" vertical-offset="2020" max-vertical-offset="3828" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/guzzlehttp/guzzle/src/Exception/ClientException.php">
@@ -812,12 +793,45 @@
         <state line="100" column="122" selection-start="3483" selection-end="3483" vertical-scroll-proportion="0.6959459" vertical-offset="1588" max-vertical-offset="2180" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/Error.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="21" selection-start="222" selection-end="222" vertical-scroll-proportion="0.26951674" vertical-offset="319" max-vertical-offset="1189">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/ClientException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="4" selection-start="206" selection-end="206" vertical-scroll-proportion="0.67657995" vertical-offset="71" max-vertical-offset="638">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/AuthorizeException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="47" selection-start="207" selection-end="207" vertical-scroll-proportion="0.67657995" vertical-offset="42" max-vertical-offset="609">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/ServerException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="16" selection-start="127" selection-end="127" vertical-scroll-proportion="0.5929368" vertical-offset="0" max-vertical-offset="638">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CEMS/BaseException.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="4" selection-start="739" selection-end="739" vertical-scroll-proportion="1.8624536" vertical-offset="216" max-vertical-offset="1421">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/CEMS/Client.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="140" column="52" selection-start="3985" selection-end="3985" vertical-scroll-proportion="1.722973" vertical-offset="1700" max-vertical-offset="4660">
-          <folding>
-            <element signature="e#109#147#0" expanded="true" />
-          </folding>
+        <state line="146" column="27" selection-start="4253" selection-end="4253" vertical-scroll-proportion="0.5687732" vertical-offset="4334" max-vertical-offset="7424">
+          <folding />
         </state>
       </provider>
     </entry>
