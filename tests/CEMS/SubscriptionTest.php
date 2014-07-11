@@ -18,19 +18,21 @@ class SubscriptionTest extends AbstractResourceTest
 {
     public function testCreateSubscription()
     {
+        /*
         $this->_resource=new CEMS\Subscription('');
         $this->_resource->name='';
-        $this->_client->post('/admin/subscriptions.json',$this->_resource->toArray());
+        $this->_client->post('/admin/subscriptions.json',$this->_resource->toArray());*/
     }
 
     public function testGetSingleSubscription()
     {
-        $_resource=$this->_client->get('subscriptions/');
     }
 
     public function testFetchSubscriptionCollection()
     {
         #todo: return page num, cur page.
+        $_resource=$this->_client->get('/admin/subscriptions.json')->getOjectList(CEMS\'Subscripttion');
+        $this->assertInstanceOf('CEMS\Subscription',$_resource[0]);
     }
 
 
