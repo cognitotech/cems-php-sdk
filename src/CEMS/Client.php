@@ -81,10 +81,19 @@ class Client
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
             $error_message=$e->getResponse()->json();
+            if (isset($error_message['error']))
+                $error_message=$error_message['error'];
+            else
+                if (isset($error_message['errors']))
+                    $error_message=$error_message['errors'];
+                else
+                    $error_message=serialize($error_message);
             throw new AuthorizeException($error_message['error'], $e->getCode(),$e->getPrevious());
-        } catch (GuzzleException\ServerErrorResponseException $e){
+        }
+        catch (GuzzleException\ServerErrorResponseException $e){
             throw new ServerException($e, $e->getCode(),$e->getPrevious());
-        } catch (GuzzleException\BadResponseException $e) {
+        }
+        catch (GuzzleException\BadResponseException $e) {
             throw new Error($e->getResponse(), $e->getCode(),$e->getPrevious());
         }
         if (isset($res))
@@ -142,7 +151,14 @@ class Client
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
             $error_message=$e->getResponse()->json();
-            throw new ClientException($error_message['error'], $e->getCode(),$e->getPrevious());
+            if (isset($error_message['error']))
+                $error_message=$error_message['error'];
+            else
+            if (isset($error_message['errors']))
+                $error_message=$error_message['errors'];
+            else
+                $error_message=serialize($error_message);
+            throw new ClientException($error_message, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\ServerErrorResponseException $e){
             throw new ServerException($e, $e->getCode(),$e->getPrevious());
