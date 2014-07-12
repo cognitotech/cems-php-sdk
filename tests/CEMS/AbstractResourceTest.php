@@ -30,8 +30,27 @@ abstract class AbstractResourceTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        TestHelper::setEnvVar();
+        AbstractResourceTest::setEnvVar();
         $this->_client = new CEMS\Client($_ENV['API_KEY'], $_ENV['API_URL']);
+    }
+
+    /**
+     * Helper Class for Setting Environment Variables
+     */
+    static function setEnvVar()
+    {
+
+        $keys = array(
+            'API_KEY',
+            'CLIENT_PASSWORD',
+            'CLIENT_EMAIL',
+            'API_URL'
+        );
+
+        foreach ($keys as $key) {
+            array_key_exists($key, $_SERVER) && $_ENV[$key] = $_SERVER[$key];
+        }
+
     }
 }
  

@@ -7,6 +7,8 @@
  */
 namespace CEMS\Tests;
 use CEMS;
+use CEMS\Client;
+
 /**
  * Class ClientTest
  * @package CEMS\Tests
@@ -19,7 +21,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
      */
     public function testAccessToken()
     {
-        $cemsClient = new CEMS\Client($_ENV['CLIENT_EMAIL'], $_ENV['CLIENT_PASSWORD'], $_ENV['API_URL']);
+        $cemsClient = new Client($_ENV['CLIENT_EMAIL'], $_ENV['CLIENT_PASSWORD'], $_ENV['API_URL']);
         $this->assertEquals($cemsClient->getAccessToken(), $_ENV['API_KEY']);
 
     }
@@ -27,11 +29,30 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         parent::setUp();
-        TestHelper::setEnvVar();
+        ClientTest::setEnvVar();
     }
 
     protected function tearDown()
     {
         parent::tearDown();
+    }
+
+    /**
+     * Helper Class for Setting Environment Variables
+     */
+    static function setEnvVar()
+    {
+
+        $keys = array(
+            'API_KEY',
+            'CLIENT_PASSWORD',
+            'CLIENT_EMAIL',
+            'API_URL'
+        );
+
+        foreach ($keys as $key) {
+            array_key_exists($key, $_SERVER) && $_ENV[$key] = $_SERVER[$key];
+        }
+
     }
 }

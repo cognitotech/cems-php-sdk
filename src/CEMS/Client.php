@@ -93,8 +93,8 @@ class Client
             $JSON_response = $this->request('POST',
                 '/staffs/sign_in.json',
                 array(
-                    'email'    => $email,
-                    'password' => $password
+                    'staff[email]'    => $email,
+                    'staff[password]' => $password
                 ),
                 null,true
             );
@@ -103,7 +103,7 @@ class Client
         }
         if (isset($JSON_response))
         {
-            $this->_accessToken = $JSON_response['access_token'];
+            $this->_accessToken = $JSON_response->access_token;
         }
     }
 

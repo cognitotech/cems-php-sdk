@@ -10,6 +10,7 @@ namespace CEMS;
 
 /**
  * Class Response
+ * @property access_token; //TODO: move to concrete class: AuthorizationResponse
  * @package CEMS
  */
 class Response
