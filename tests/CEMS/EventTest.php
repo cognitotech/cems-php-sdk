@@ -44,7 +44,7 @@ class EventTest extends AbstractResourceTest
 
     public function testFetchEventCollection()
     {
-        #todo: return page num, cur page.
+        //todo: return page num, cur page.
         $this->_resource=$this->_client->get('/admin/events.json');
         $this->assertInstanceOf('CEMS\Response',$this->_resource);
         $this->assertEquals(1,$this->_resource->current_page);

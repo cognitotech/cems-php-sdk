@@ -66,7 +66,7 @@ class CustomerTest extends AbstractResourceTest
      */
     public function testFetchCustomerCollection()
     {
-        #todo: return page num, cur page.
+        //todo: return page num, cur page.
         $this->_resource=$this->_client->get('/admin/customers.json');
         $this->assertInstanceOf('CEMS\Response',$this->_resource);
         $this->assertEquals(1,$this->_resource->current_page);
@@ -78,6 +78,7 @@ class CustomerTest extends AbstractResourceTest
      * @depends testCreateCustomer
      * @covers Client::put
      * @covers Customer::__set
+     * @param CEMS\Customer $customer
      */
     public function testUpdateCustomer($customer)
     {

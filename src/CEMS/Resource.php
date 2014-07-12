@@ -11,6 +11,7 @@ namespace CEMS;
 /**
  * Class Resource
  * @package CEMS
+ * TODO: add proper magic properties for each class
  */
 class Resource
 {
@@ -37,7 +38,6 @@ class Resource
      */
     public function getPropertyAsArray()
     {
-        #TODO: cast child object to its proper class if available
         return array_values($this->_data);
     }
 
@@ -61,7 +61,7 @@ class Resource
     /**
      * @param $key
      *
-     * @return value
+     * @return mixed value
      */
     public function __get($key)
     {

@@ -30,8 +30,8 @@ class SubscriptionTest extends AbstractResourceTest
 
     public function testFetchSubscriptionCollection()
     {
-        #todo: return page num, cur page.
-        $_resource=$this->_client->get('/admin/subscriptions.json')->getOjectList(CEMS\'Subscription');
+        //todo: return page num, cur page.
+        $_resource=$this->_client->get('/admin/subscriptions.json')->getObjectList(CEMS\'Subscription');
         $this->assertInstanceOf('CEMS\Subscription',$_resource[0]);
     }
 

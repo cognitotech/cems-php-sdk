@@ -29,7 +29,6 @@ class Guzzle4 implements GuzzleStrategy{
     public function request($httpMethod='GET', $path='',  array $params = null, $version = null,$isAuthorization=false)
     {
         $guzzleClient=new GuzzleClient();
-        #TODO: make this convert to Strategy class
         switch ($httpMethod) {
             case 'GET':
                 $request = $guzzleClient->createRequest($httpMethod, $path,array('query'=>$params));
@@ -38,7 +37,7 @@ class Guzzle4 implements GuzzleStrategy{
                 $request = $guzzleClient->createRequest($httpMethod, $path, array('body' => $params));
         }
         try {
-            $res = $this->_client->send($request);
+            $res = $guzzleClient->send($request);
         } catch (GuzzleException\ClientException $e) {
             //catch error 404
             $error_message=$e->getResponse();
@@ -47,7 +46,7 @@ class Guzzle4 implements GuzzleStrategy{
             else
                 throw new ClientException($error_message, $e->getCode(),$e->getPrevious());
         }
-        catch (GuzzleException\ServerErrorResponseException $e){
+        catch (GuzzleException\ServerException $e){
             throw new ServerException($e, $e->getCode(),$e->getPrevious());
         }
         catch (GuzzleException\BadResponseException $e) {

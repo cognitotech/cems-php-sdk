@@ -32,24 +32,24 @@ class Client
     protected $_strategy;
 
     /**
-     * parse arguments and go to corresponding constructor
+     * Helper function for determine PHP version
      */
-
     protected function getPHPVersion(){
+        $version = explode('.', PHP_VERSION);
         if (!defined('PHP_VERSION_ID')) {
-            $version = explode('.', PHP_VERSION);
-
             define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
         }
         if (PHP_VERSION_ID < 50207) {
             define('PHP_MAJOR_VERSION',   $version[0]);
             define('PHP_MINOR_VERSION',   $version[1]);
             define('PHP_RELEASE_VERSION', $version[2]);
-
-            // and so on, ...
         }
     }
 
+    /**
+     * parse arguments and go to corresponding constructor
+     * @return Client object
+     */
     function __construct()
     {
         $a = func_get_args();
@@ -90,7 +90,7 @@ class Client
     {
         $this->_apiUrl = $api_url;
         try {
-            $res = $this->request('POST',
+            $JSON_response = $this->request('POST',
                 '/staffs/sign_in.json',
                 array(
                     'email'    => $email,
@@ -101,10 +101,8 @@ class Client
         } catch (BaseException $e) {
             throw $e;
         }
-        if (isset($res))
+        if (isset($JSON_response))
         {
-            $JSON_response = $res->json();
-
             $this->_accessToken = $JSON_response['access_token'];
         }
     }
@@ -130,7 +128,6 @@ class Client
      */
     public function request($httpMethod='GET', $path='',  array $params = null, $version = null, $isAuthorization=false)
     {
-        #TODO: make this convert to Strategy class
         if ($httpMethod!='GET')
         {
             $post_params = array();

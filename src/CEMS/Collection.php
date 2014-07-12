@@ -34,6 +34,7 @@ class Collection
                 array_push($this->_collection, $object);
             }
         }
+        //TODO: save page num, current page to this class
     }
 
     /**
