@@ -7,8 +7,6 @@
  */
 
 namespace CEMS;
-use GuzzleHttp\Client as GuzzleClient;
-use GuzzleHttp\Exception as GuzzleException;
 
 /**
  * Class Client
@@ -16,6 +14,7 @@ use GuzzleHttp\Exception as GuzzleException;
  */
 class Client
 {
+//TODO: convert to Singleton Object
     /**
      * @var string
      */
@@ -27,19 +26,41 @@ class Client
     protected $_apiUrl = '';
 
     /**
-     * @var array|\GuzzleHttp\Client
+     * Guzzle Interface for compatible with old PHP 5.3 and 5.4+
+     * @var GuzzleStrategy
      */
-    protected $_client = array();
+    protected $_strategy;
 
     /**
      * parse arguments and go to corresponding constructor
      */
+
+    protected function getPHPVersion(){
+        if (!defined('PHP_VERSION_ID')) {
+            $version = explode('.', PHP_VERSION);
+
+            define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
+        }
+        if (PHP_VERSION_ID < 50207) {
+            define('PHP_MAJOR_VERSION',   $version[0]);
+            define('PHP_MINOR_VERSION',   $version[1]);
+            define('PHP_RELEASE_VERSION', $version[2]);
+
+            // and so on, ...
+        }
+    }
+
     function __construct()
     {
-        $this->_client = new GuzzleClient();
         $a = func_get_args();
         $i = func_num_args();
-
+        $this->getPHPVersion();
+        if (PHP_MAJOR_VERSION==5){
+            if (PHP_MINOR_VERSION==3 && PHP_RELEASE_VERSION>=3)
+                $this->_strategy=new Guzzle3();
+            if (PHP_MINOR_VERSION>=4)
+                $this->_strategy=new Guzzle4();
+        } //TODO: should through 'Not Compatible PHP Version' message here
         if (method_exists($this, $f = '__construct' . $i)) {
             call_user_func_array(array($this, $f), $a);
         }
@@ -57,37 +78,28 @@ class Client
 
     /**
      * Construct new Client Object
+     *
      * @param string $email
      * @param string $password
      * @param string $api_url
      *
-     * @throws AuthorizeException
-     * @throws ServerException
-     * @throws Error
-     *
      * @return Client Client object
+     * @throws BaseException
      */
     function __construct3($email = '', $password = '', $api_url = '')
     {
-
         $this->_apiUrl = $api_url;
         try {
-            $res = $this->_client->post($this->_apiUrl . '/staffs/sign_in.json', [
-                'body' => [
-                    'staff[email]'    => $email,
-                    'staff[password]' => $password
-                ]
-            ]);
-        } catch (GuzzleException\ClientException $e) {
-            //catch error 404
-            $error_message=$e->getResponse();
-            throw new AuthorizeException($error_message, $e->getCode(),$e->getPrevious());
-        }
-        catch (GuzzleException\ServerErrorResponseException $e){
-            throw new ServerException($e, $e->getCode(),$e->getPrevious());
-        }
-        catch (GuzzleException\BadResponseException $e) {
-            throw new Error($e->getResponse(), $e->getCode(),$e->getPrevious());
+            $res = $this->request('POST',
+                '/staffs/sign_in.json',
+                array(
+                    'email'    => $email,
+                    'password' => $password
+                ),
+                null,true
+            );
+        } catch (BaseException $e) {
+            throw $e;
         }
         if (isset($res))
         {
@@ -99,107 +111,96 @@ class Client
 
     function __destruct()
     {
+
     }
 
     /**
      * Request method
-     * @param      $httpMethod
-     * @param      $path
-     * @param null $params
-     * @param null $version
      *
+     * @param string $httpMethod
+     * @param string $path
+     * @param array $params
+     * @param null $version
+     * @param bool $isAuthorization
+     * @return Response
      * @throws ClientException
+     * @throws AuthorizeException
      * @throws ServerException
      * @throws Error
-     *
-     * @return Response return CEMS\Response
      */
-    public function request($httpMethod, $path, $params = null, $version = null)
+    public function request($httpMethod='GET', $path='',  array $params = null, $version = null, $isAuthorization=false)
     {
-        switch ($httpMethod) {
-            case 'GET':
-                $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path);
-                $query = $request->getQuery();
-                $query->set('access_token', $this->_accessToken);
-                if ($params!=null)
-                    foreach ($params as $param => $value)
-                        $query->set($param, $value);
-                break;
-            default:
-                //pre-process form data
-                $post_params = array();
+        #TODO: make this convert to Strategy class
+        if ($httpMethod!='GET')
+        {
+            $post_params = array();
+            if (!$isAuthorization)
                 $post_params['access_token'] = $this->_accessToken;
 
-                $api_callback = $this->getBetween($path, 'admin/', '.json');
-                $api_callback = substr(explode('/',$api_callback)[0],0,-1);
-                if ($params!=null)
-                    foreach ($params as $param => $value) {
-                        $post_params[$api_callback . '[' . $param . ']'] = $value;
-                    }
-                $request = $this->_client->createRequest($httpMethod, $this->_apiUrl . $path, ['body' => $post_params]);
+            $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
+            $api_callback = substr(explode('/',$api_callback)[0],0,-1);
+            if ($params!=null)
+                foreach ($params as $param => $value) {
+                    $post_params[$api_callback . '[' . $param . ']'] = $value;
+                }
+            $params=$post_params;
         }
-
-        try {
-            $res = $this->_client->send($request);
-        } catch (GuzzleException\ClientException $e) {
-            //catch error 404
-            $error_message=$e->getResponse();
-            throw new ClientException($error_message, $e->getCode(),$e->getPrevious());
+        else
+        {
+            //add access_token to GET api
+            $params['access_token']=$this->_accessToken;
         }
-        catch (GuzzleException\ServerErrorResponseException $e){
-            throw new ServerException($e, $e->getCode(),$e->getPrevious());
-        }
-        catch (GuzzleException\BadResponseException $e) {
-                throw new Error($e->getResponse(), $e->getCode(),$e->getPrevious());
-        }
-        $response = new Response($res->json());
-        return $response;
+        return $this->_strategy->request(
+            $httpMethod,
+            $this->_apiUrl.$path,
+            $params, $version, $isAuthorization
+        );
     }
 
     /**
      * @param      $path
-     * @param null $params
+     * @param array $params
      * @param null $version
      *
      * @return Response
      */
-    public function get($path, $params = null, $version = null)
+    public function get($path, array $params = null, $version = null)
     {
         return $this->request('GET', $path, $params, $version);
     }
 
     /**
      * @param      $path
-     * @param null $params
+     * @param array $params
      * @param null $version
      *
      * @return Response
      */
-    public function post($path, $params = null, $version = null)
+    public function post($path, array $params = null, $version = null)
     {
         return $this->request('POST', $path, $params, $version);
     }
 
     /**
      * @param      $path
-     * @param null $params
+     * @param array $params
      * @param null $version
      *
      * @return Response
      */
-    public function put($path, $params = null, $version = null)
+    public function put($path, array $params = null, $version = null)
     {
         return $this->request('PUT', $path, $params, $version);
     }
 
     /**
      * @param      $path
-     * @param null $params
+     * @param array $params
      * @param null $version
      *
      * @return Response
      */
-    public function delete($path, $params = null, $version = null)
+    public function delete($path, array $params = null, $version = null)
     {
         return $this->request('DELETE', $path, $params, $version);
     }
@@ -218,24 +219,5 @@ class Client
     public function getApiUrl()
     {
         return $this->_apiUrl;
-    }
-
-    /**
-     * @param $content
-     * @param $start
-     * @param $end
-     *
-     * @return string
-     */
-    private function getBetween($content, $start, $end)
-    {
-        $r = explode($start, $content);
-        if (isset($r[1])) {
-            $r = explode($end, $r[1]);
-
-            return $r[0];
-        }
-
-        return '';
     }
 }
