@@ -56,7 +56,7 @@ class Client
         $i = func_num_args();
         $this->getPHPVersion();
         if (PHP_MAJOR_VERSION==5){
-            if (PHP_MINOR_VERSION==3 && PHP_RELEASE_VERSION>=3)
+            if (PHP_MINOR_VERSION==3 && PHP_RELEASE_VERSION>=2)
                 $this->_strategy=new Guzzle3();
             if (PHP_MINOR_VERSION>=4)
                 $this->_strategy=new Guzzle4();

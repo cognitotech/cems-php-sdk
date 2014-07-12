@@ -5,6 +5,7 @@
     "keywords": ["sdk","cems"],
     "homepage": "https://github.com/siliconstraits/cems-php-sdk",
     "require": {
+        "php": ">=5.3.2",
         "guzzle/guzzle": "3.*",
         "guzzlehttp/guzzle": "4.*"
     },
