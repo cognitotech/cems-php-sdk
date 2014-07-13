@@ -111,6 +111,7 @@ Or using these alias below:
 - `delete($path, $params = NULL)`
 
 *NOTE*: You must provide the right path from API documentation.
+*NOTE2*: For the compatibility problem of Guzzle between PHP 5.3 and 5.4, and Composer still not support multiple package version with correspond PHP environment, we assure you that the local test has been passed before release each iterative version.
 
 The request will automatically return a Response object contain JSON data return from API if success. Then you can retrieve the proper result by using the method `getObject($type='CEMS\Resource')` or `getObjectList($type='CEMS\Resource')`
 

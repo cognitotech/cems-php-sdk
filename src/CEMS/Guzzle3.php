@@ -31,10 +31,10 @@ class Guzzle3 implements GuzzleStrategy{
         $guzzleClient=new GuzzleClient();
         switch ($httpMethod) {
             case 'GET':
-                $request = $guzzleClient->createRequest($httpMethod, $path,array(),array('query'=>$params));
+                $request = $guzzleClient->get($path,array(),array('query'=>$params));
                 break;
             default:
-                $request = $guzzleClient->createRequest($httpMethod, $path, array(),array('body' => $params));
+                $request = $guzzleClient->createRequest($httpMethod, $path, array(),$params);
         }
         try {
             $res = $request->send();
@@ -42,7 +42,7 @@ class Guzzle3 implements GuzzleStrategy{
             //catch error 404
             $error_message=$e->getResponse();
             if ($isAuthorization)
-                throw new AuthorizeException($error_message, $error_message->getCode(),$e->getPrevious());
+                throw new AuthorizeException($error_message, $error_message->getStatusCode(),$e->getPrevious());
             else
                 throw new ClientException($error_message, $e->getResponse()->getStatusCode(),$e->getPrevious());
         }
