@@ -9,7 +9,7 @@ This is the official PHP-SDK for CEMS's API. [View api documentation and example
 
 ### Requirements
 
-1. PHP >= 5.4
+1. PHP >= 5.3.2
 2. PHP curl extensions.
 
 You don't need to clone the repo directly to use this SDK, the entire library and its dependencies can be installed through Composer ( [https://getcomposer.org/doc/00-intro.md](https://getcomposer.org/doc/00-intro.md) ).

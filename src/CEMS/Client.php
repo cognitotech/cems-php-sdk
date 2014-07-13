@@ -58,8 +58,8 @@ class Client
         if (PHP_MAJOR_VERSION==5){
             if (PHP_MINOR_VERSION==3 && PHP_RELEASE_VERSION>=2)
                 $this->_strategy=new Guzzle3();
-            if (PHP_MINOR_VERSION>=4)
-                $this->_strategy=new Guzzle4();
+            //if (PHP_MINOR_VERSION>=4)
+            //    $this->_strategy=new Guzzle4();
         } //TODO: should through 'Not Compatible PHP Version' message here
         if (method_exists($this, $f = '__construct' . $i)) {
             call_user_func_array(array($this, $f), $a);
