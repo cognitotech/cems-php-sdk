@@ -45,10 +45,12 @@ class BaseException extends Exception
         $json=$this->_response->json();
 
         $messages=$json;
-        if (isset($json['error']))
-            $messages=$json['error'];
+        /*        if (isset($json['error']))
+                    $messages=$json['error'];
+                    */
         if (isset($json['errors']))
             $messages=$json['errors'];
+
         $result=array();
         foreach ($messages as $k=>$v)
             if ($v!=null)
