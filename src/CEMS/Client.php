@@ -56,7 +56,7 @@ class Client
         $i = func_num_args();
         $this->getPHPVersion();
         if (PHP_MAJOR_VERSION==5){
-            if (PHP_MINOR_VERSION>=3 && PHP_RELEASE_VERSION>=2)
+            if (PHP_MINOR_VERSION>=3)
                 $this->_strategy=new Guzzle3();
             //if (PHP_MINOR_VERSION>=4)
             //    $this->_strategy=new Guzzle4();
@@ -135,7 +135,8 @@ class Client
                 $post_params['access_token'] = $this->_accessToken;
 
             $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
-            $api_callback = substr(explode('/',$api_callback)[0],0,-1);
+            $parser=explode('/',$api_callback);
+            $api_callback = substr($parser[0],0,-1);
             if ($params!=null)
                 foreach ($params as $param => $value) {
                     $post_params[$api_callback . '[' . $param . ']'] = $value;
