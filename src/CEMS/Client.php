@@ -136,11 +136,10 @@ class Client
 
             $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
             $parser=explode('/',$api_callback);
-            $api_callback = substr($parser[0],0,-1);
+            $api_callback = substr($parser[0],0,-1); //get singular string by remove last s
+            //TODO: get proper singular string for '-es' case.
             if ($params!=null)
-                foreach ($params as $param => $value) {
-                    $post_params[$api_callback . '[' . $param . ']'] = $value;
-                }
+	       $post_params[$api_callback]=$params;
             $params=$post_params;
         }
         else

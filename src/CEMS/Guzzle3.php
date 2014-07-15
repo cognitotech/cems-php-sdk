@@ -31,10 +31,14 @@ class Guzzle3 implements GuzzleStrategy{
         $guzzleClient=new GuzzleClient();
         switch ($httpMethod) {
             case 'GET':
+            //TODO: array liked param need manual parser
                 $request = $guzzleClient->get($path,array(),array('query'=>$params));
                 break;
             default:
-                $request = $guzzleClient->createRequest($httpMethod, $path, array(),$params);
+            //default:'Content-Type'=>'application/json' for "*.json" URI
+                $json_body=json_encode($params);
+                $request = $guzzleClient->createRequest($httpMethod, $path, array(),$json_body);
+                $request->setHeader('Content-Type','application/json');
         }
         try {
             $res = $request->send();
@@ -47,7 +51,7 @@ class Guzzle3 implements GuzzleStrategy{
                 throw new ClientException($error_message, $e->getResponse()->getStatusCode(),$e->getPrevious());
         }
         catch (GuzzleException\ServerErrorResponseException $e){
-            throw new ServerException($e, $e->getResponse()->getStatusCode(),$e->getPrevious());
+            throw new ServerException($e, '$e->getResponse()->getStatusCode()',$e->getPrevious());
         }
         catch (GuzzleException\BadResponseException $e) {
             throw new Error($e->getResponse(), $e->getResponse()->getStatusCode(),$e->getPrevious());
