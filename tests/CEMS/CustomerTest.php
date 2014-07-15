@@ -32,7 +32,7 @@ class CustomerTest extends AbstractResourceTest
             'gender' => 'male',
             'birthday' => '17/09/1990',
             'address' => 'test',
-            'email' => 'customer-test@cems.php.sdk',
+            'email' => 'customer-testv2@cems.php.sdk',
             'phone' => '23156'
         ));
         $this->_resource->password='testtest';

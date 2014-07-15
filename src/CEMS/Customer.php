@@ -23,6 +23,7 @@ use DateTime;
  * @property string gender
  * @property string address
  * @property string subscription_status
+ * @property string place
  *
  */
 class Customer extends Resource

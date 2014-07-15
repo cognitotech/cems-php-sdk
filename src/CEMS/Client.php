@@ -93,8 +93,8 @@ class Client
             $JSON_response = $this->request('POST',
                 '/staffs/sign_in.json',
                 array(
-                    'staff[email]'    => $email,
-                    'staff[password]' => $password
+                    'email'    => $email,
+                    'password' => $password
                 ),
                 null,true
             );
@@ -132,14 +132,19 @@ class Client
         {
             $post_params = array();
             if (!$isAuthorization)
+            {
                 $post_params['access_token'] = $this->_accessToken;
+                $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
+                $parser=explode('/',$api_callback);
+                $api_callback = substr($parser[0],0,-1); //get singular string by remove last s
+                //TODO: get proper singular string for '-es' case.
+                if ($params!=null)
+                    $post_params[$api_callback]=$params;
 
-            $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
-            $parser=explode('/',$api_callback);
-            $api_callback = substr($parser[0],0,-1); //get singular string by remove last s
-            //TODO: get proper singular string for '-es' case.
-            if ($params!=null)
-	       $post_params[$api_callback]=$params;
+            }
+            else{
+                $post_params['staff']=$params;
+            }
             $params=$post_params;
         }
         else
