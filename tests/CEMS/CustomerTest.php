@@ -84,11 +84,9 @@ class CustomerTest extends AbstractResourceTest
     {
         $this->_resource=$customer;
         $this->_resource->last_name="Phan Nguyen";
-        $this->_resource->phone="098123123";
         $this->assertInstanceOf('CEMS\Response',$this->_client->put('/admin/customers/'.$this->_resource->id.'.json',$this->_resource->toArray()));
         $customer=$this->_client->get('/admin/customers/'.$this->_resource->id.'.json')->getObject('CEMS\Customer');
         $this->assertEquals($this->_resource->last_name,$customer->last_name);
-        $this->assertEquals($this->_resource->phone,$customer->phone);
     }
 
     /**
