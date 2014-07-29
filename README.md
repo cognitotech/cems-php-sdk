@@ -14,7 +14,7 @@ This is the official PHP-SDK for CEMS's API. [View api documentation and example
 
 You don't need to clone the repo directly to use this SDK, the entire library and its dependencies can be installed through Composer ( [https://getcomposer.org/doc/00-intro.md](https://getcomposer.org/doc/00-intro.md) ).
 
-- First, install Composer if you don't have it already
+- First, install Composer if you haven't have it already
 
 ```shell
 curl -sS https://getcomposer.org/installer | php
@@ -91,24 +91,20 @@ catch (CEMS\Error $e) {
 Or
 
 ```php
-$client->request('POST',"subscriptions", array(
-    'abc' => $abc
+$client->post("/admin/subscriptions.json", array(
+    'customer_id'     => $customer_id,
+    'subscriber_list_id'  => $subscriber_list_id
 ));
-$client->request('PUT',"subscriptions/$id", array(
-    'abc' => $abc
+$client->get("/admin/subscriptions/find_by.json", array(
+    'customer_id'     => $customer_id,
+    'subscriber_list_id'  => $subscriber_list_id
 ));
-$client->request('GET','subscriptions/find_by', array(
-    'customer_id'			=> $customer_id,
-    'subscriber_list_id'	=> $subscriber_list_id
+$client->put("/admin/subscriptions/$id.json", array(
+    'customer_id'     => $customer_id,
+    'subscriber_list_id'  => $subscriber_list_id
 ));
+$client->delete("/admin/subscriptions/$id.json");
 ```
-
-Or using these alias below:
-
-- `get($path, $params = NULL)`
-- `post($path, $params = NULL)`
-- `put($path, $params = NULL)`
-- `delete($path, $params = NULL)`
 
 *NOTE*: You must provide the right path from API documentation.
 *NOTE2*: For the compatibility problem of Guzzle between PHP 5.3 and 5.4, and Composer still not support multiple package version with correspond PHP environment, we assure you that the local test has been passed before release each iterative version.
@@ -116,9 +112,9 @@ Or using these alias below:
 The request will automatically return a Response object contain JSON data return from API if success. Then you can retrieve the proper result by using the method `getObject($type='CEMS\Resource')` or `getObjectList($type='CEMS\Resource')`
 
 ```php
-$customer = $client->request('GET',"customers/$id')->getObject(); // CEMS\Object
+$customer = $client->get('customers/$id')->getObject(); // CEMS\Resource
 
-$customers = $client->request('GET','customers')->getObjectList('customer'); // array of CEMS\Customer
+$customers = $client->get('customers')->getObjectList('customer'); // CEMS\Collection Class contains many CEMS\Customer elements
 ```
 
 ### Retrieving fields returned from the API
@@ -126,8 +122,8 @@ $customers = $client->request('GET','customers')->getObjectList('customer'); // 
 Using magic methods to set or get fields
 
 ```php
-$customer->name('Hoang Van Tien');
-echo $customer->name();
+$customer->name = 'Nguyen Le Xuan';
+echo $customer->name;
 ```
 
 Or if you want to get all attributes in an array
@@ -143,8 +139,6 @@ foreach ($customers as $customer) {
 ---------------------
 
 This project contains PHPUnit tests that check the SDK code and can also be referenced for examples. Most are functional and integrated tests that walk through real user scenarios. In some cases, this means you must have an active network connection with access to HelloSign to execute all tests. Also, your testing account will need at least 1 template for the template tests to pass.
-
-*** WARNING: these tests will add and remove users from your team. Use with caution.
 
 ### To run the tests
 
