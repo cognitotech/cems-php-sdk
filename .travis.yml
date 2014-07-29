@@ -19,6 +19,7 @@ before_install:
 - phpenv rehash
 - composer self-update
 - composer install
+- composrt update --lock
 before_script:
 - composer update
 script:
