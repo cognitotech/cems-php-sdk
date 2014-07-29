@@ -17,8 +17,9 @@ before_install:
 - pear install phpunit/PHP_CodeCoverage
 - pear install phpunit/PHPUnit_MockObject
 - phpenv rehash
+- composer self-update
 - composer install
 before_script:
-- composer self-update
+- composer update
 script:
 - phpunit

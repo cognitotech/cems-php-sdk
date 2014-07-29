@@ -33,12 +33,12 @@ class CustomerTest extends AbstractResourceTest
             'birthday' => '17/09/1990',
             'address' => 'test',
             'email' => 'customer-testv2@cems.php.sdk',
-            'phone' => '23156'
+            'phone' => '9999'
         ));
         $this->_resource->password='testtest';
         $this->assertArrayHasKey('password',$this->_resource->toArray());
-        $this->_resource->phone='0123456789';
-        $this->assertEquals('0123456789',$this->_resource->phone);
+        $this->_resource->phone='01273451490';
+        $this->assertEquals('01273451490',$this->_resource->phone);
         $customer=$this->_client->post('/admin/customers.json',$this->_resource->toArray())->getObject('CEMS\Customer');
         $this->assertContains('id',$customer->getPropertyNames());
         $this->assertContains("avatars/male.png",$customer->getPropertyAsArray());
