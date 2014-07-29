@@ -18,9 +18,9 @@ before_install:
 - pear install phpunit/PHPUnit_MockObject
 - phpenv rehash
 - composer self-update
-- composer install
 - composer update --lock
 before_script:
 - composer update
+- composer install
 script:
 - phpunit
