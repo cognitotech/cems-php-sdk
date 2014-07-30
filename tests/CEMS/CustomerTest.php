@@ -71,7 +71,9 @@ class CustomerTest extends AbstractResourceTest
         $this->assertInstanceOf('CEMS\Response',$this->_resource);
         $this->assertEquals(1,$this->_resource->current_page);
         $customers=$this->_resource->getObjectList('CEMS\Customer');
-        $this->assertInstanceOf('CEMS\Customer',$customers->toArray()[0]);
+        $collection=$customers->toArray();
+        $this->assertInstanceOf('CEMS\Collection',$collection);
+        $this->assertInstanceOf('CEMS\Customer',$collection[0]);
     }
 
     /**
