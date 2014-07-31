@@ -18,11 +18,11 @@ class Resource
     /**
      * @var array
      */
-    protected $_data = array();
+    protected $data = array();
 
     function __construct($json_object)
     {
-        $this->_data = $json_object;
+        $this->data = $json_object;
     }
 
     /**
@@ -30,7 +30,7 @@ class Resource
      */
     public function toArray()
     {
-        return $this->_data;
+        return $this->data;
     }
 
     /**
@@ -38,7 +38,7 @@ class Resource
      */
     public function getPropertyAsArray()
     {
-        return array_values($this->_data);
+        return array_values($this->data);
     }
 
     /**
@@ -46,7 +46,7 @@ class Resource
      */
     public function getPropertyNames()
     {
-        return array_keys($this->_data);
+        return array_keys($this->data);
     }
 
     /**
@@ -55,7 +55,7 @@ class Resource
      */
     public function __set($key, $value)
     {
-        $this->_data[$key] = $value;
+        $this->data[$key] = $value;
     }
 
     /**
@@ -65,8 +65,8 @@ class Resource
      */
     public function __get($key)
     {
-        if (array_key_exists($key, $this->_data)) {
-            return $this->_data[$key];
+        if (array_key_exists($key, $this->data)) {
+            return $this->data[$key];
         }
 
         return null;
@@ -79,6 +79,6 @@ class Resource
      */
     public function __isset($key)
     {
-        return isset($this->_data[$key]);
+        return isset($this->data[$key]);
     }
 } 

@@ -16,16 +16,16 @@ namespace CEMS;
 class Response
 {
     /**
-     * @var $_response contain raw data in JSON format
+     * @var $response contain raw data in JSON format
      */
-    protected $_response = array();
+    protected $response = array();
 
     /**
      * @param $JSON_data
      */
     function __construct($JSON_data)
     {
-        $this->_response = $JSON_data;
+        $this->response = $JSON_data;
     }
 
     /**
@@ -35,7 +35,7 @@ class Response
      */
     public function getObjectList($type = 'CEMS\Resource')
     {
-        return new Collection($this->_response, $type);
+        return new Collection($this->response, $type);
     }
 
     /**
@@ -48,7 +48,7 @@ class Response
         $class = ucwords($type);
         $object = null;
         if (class_exists($class)) {
-            $object = new $class($this->_response);
+            $object = new $class($this->response);
         }
 
         return $object;
@@ -61,8 +61,8 @@ class Response
      */
     public function __get($key)
     {
-        if (array_key_exists($key, $this->_response)) {
-            return $this->_response[$key];
+        if (array_key_exists($key, $this->response)) {
+            return $this->response[$key];
         }
 
         return null;
@@ -75,6 +75,6 @@ class Response
      */
     public function __isset($key)
     {
-        return isset($this->_response[$key]);
+        return isset($this->response[$key]);
     }
 }

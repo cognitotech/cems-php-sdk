@@ -17,21 +17,21 @@ class Collection
     /**
      * @var array
      */
-    protected $_collection = array();
+    protected $collection = array();
 
     /**
-     * @param        $RAW_response
+     * @param        $raw_response
      * @param string $type
      */
-    function __construct($RAW_response, $type = 'CEMS\Resource')
+    function __construct($raw_response, $type = 'CEMS\Resource')
     {
-        $this->_collection = array();
+        $this->collection = array();
 
         $class = ucwords($type);
         if (class_exists($class)) {
-            foreach ($RAW_response['collection'] as $item) {
+            foreach ($raw_response['collection'] as $item) {
                 $object = new $class($item);
-                array_push($this->_collection, $object);
+                array_push($this->collection, $object);
             }
         }
         //TODO: save page num, current page to this class
@@ -42,6 +42,6 @@ class Collection
      */
     public function toArray()
     {
-        return $this->_collection;
+        return $this->collection;
     }
 } 

@@ -29,7 +29,7 @@ class Guzzle4 implements GuzzleStrategy
      * @throws ServerException
      * @throws Error
      */
-    public function request($httpMethod = 'GET', $path = '', array $params = null, $version = null, $isAuthorization = false)
+    public function request($httpMethod = 'GET', $path = '', $params = array(), $version = null, $isAuthorization = false)
     {
         $guzzleClient = new GuzzleClient();
         switch ($httpMethod) {

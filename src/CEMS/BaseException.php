@@ -20,12 +20,17 @@ class BaseException extends Exception
      * Save response data
      * @var null
      */
-    protected $_response;
+    protected $response;
 
+    /**
+     * @param null $message
+     * @param int $code
+     * @param Exception $previous
+     */
     function __construct($message = null, $code = 0, Exception $previous = null)
     {
         // make sure everything is assigned properly
-        $this->_response = $message;
+        $this->response = $message;
         parent::__construct($message, $code, $previous);
     }
 
@@ -44,7 +49,7 @@ class BaseException extends Exception
      */
     public function getFormattedMessage()
     {
-        $json = $this->_response->json();
+        $json = $this->response->json();
 
         $messages = $json;
         /*        if (isset($json['error']))

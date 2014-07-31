@@ -22,7 +22,7 @@ class Error extends BaseException
 
         $dump = $this->varDumpToString($this->_message);
 
-        return get_class($this) . ":[{$this->_code}]: {$dump}\n";
+        return get_class($this) . ":[{$this->code}]: {$dump}\n";
     }
 
     /**

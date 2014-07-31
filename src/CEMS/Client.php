@@ -18,18 +18,18 @@ class Client
     /**
      * @var string
      */
-    protected $_accessToken = '';
+    protected $accessToken = '';
 
     /**
      * @var string
      */
-    protected $_apiUrl = '';
+    protected $apiUrl = '';
 
     /**
      * Guzzle Interface for compatible with old PHP 5.3 and 5.4+
      * @var GuzzleStrategy
      */
-    protected $_strategy;
+    protected $strategy;
 
     /**
      * Helper function for determine PHP version
@@ -58,9 +58,9 @@ class Client
         $this->getPHPVersion();
         if (PHP_MAJOR_VERSION == 5) {
             if (PHP_MINOR_VERSION >= 3)
-                $this->_strategy = new Guzzle3();
+                $this->strategy = new Guzzle3();
             //if (PHP_MINOR_VERSION>=4)
-            //    $this->_strategy=new Guzzle4();
+            //    $this->strategy=new Guzzle4();
         } //TODO: should through 'Not Compatible PHP Version' message here
         if (method_exists($this, $f = '__construct' . $i)) {
             call_user_func_array(array($this, $f), $a);
@@ -73,8 +73,8 @@ class Client
      */
     function __construct2($access_token = '', $api_url = '')
     {
-        $this->_apiUrl = $api_url;
-        $this->_accessToken = $access_token;
+        $this->apiUrl = $api_url;
+        $this->accessToken = $access_token;
     }
 
     /**
@@ -89,7 +89,7 @@ class Client
      */
     function __construct3($email = '', $password = '', $api_url = '')
     {
-        $this->_apiUrl = $api_url;
+        $this->apiUrl = $api_url;
         try {
             $JSON_response = $this->request('POST',
                 '/staffs/sign_in.json',
@@ -103,7 +103,7 @@ class Client
             throw $e;
         }
         if (isset($JSON_response)) {
-            $this->_accessToken = $JSON_response->access_token;
+            $this->accessToken = $JSON_response->access_token;
         }
     }
 
@@ -132,7 +132,7 @@ class Client
         if ($httpMethod != 'GET') {
             $post_params = array();
             if (!$isAuthorization) {
-                $post_params['access_token'] = $this->_accessToken;
+                $post_params['access_token'] = $this->accessToken;
                 $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
                 $parser = explode('/', $api_callback);
                 $api_callback = substr($parser[0], 0, -1); //get singular string by remove last s
@@ -146,12 +146,12 @@ class Client
             $params = $post_params;
         } else {
             //add access_token to GET api
-            $params['access_token'] = $this->_accessToken;
+            $params['access_token'] = $this->accessToken;
         }
 
-        return $this->_strategy->request(
+        return $this->strategy->request(
             $httpMethod,
-            $this->_apiUrl . $path,
+            $this->apiUrl . $path,
             $params, $version, $isAuthorization
         );
     }
@@ -209,7 +209,7 @@ class Client
      */
     public function getAccessToken()
     {
-        return $this->_accessToken;
+        return $this->accessToken;
     }
 
     /**
@@ -217,6 +217,6 @@ class Client
      */
     public function getApiUrl()
     {
-        return $this->_apiUrl;
+        return $this->apiUrl;
     }
 }
