@@ -12,6 +12,7 @@ namespace CEMS;
  * Class ClientException
  * @package CEMS
  */
-class ClientException extends BaseException{
+class ClientException extends BaseException
+{
 
 } 

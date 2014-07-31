@@ -7,6 +7,7 @@
  */
 
 namespace CEMS\Tests;
+
 use CEMS;
 
 /**

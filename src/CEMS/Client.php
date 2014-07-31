@@ -34,14 +34,15 @@ class Client
     /**
      * Helper function for determine PHP version
      */
-    protected function getPHPVersion(){
+    protected function getPHPVersion()
+    {
         $version = explode('.', PHP_VERSION);
         if (!defined('PHP_VERSION_ID')) {
             define('PHP_VERSION_ID', ($version[0] * 10000 + $version[1] * 100 + $version[2]));
         }
         if (PHP_VERSION_ID < 50207) {
-            define('PHP_MAJOR_VERSION',   $version[0]);
-            define('PHP_MINOR_VERSION',   $version[1]);
+            define('PHP_MAJOR_VERSION', $version[0]);
+            define('PHP_MINOR_VERSION', $version[1]);
             define('PHP_RELEASE_VERSION', $version[2]);
         }
     }
@@ -55,9 +56,9 @@ class Client
         $a = func_get_args();
         $i = func_num_args();
         $this->getPHPVersion();
-        if (PHP_MAJOR_VERSION==5){
-            if (PHP_MINOR_VERSION>=3)
-                $this->_strategy=new Guzzle3();
+        if (PHP_MAJOR_VERSION == 5) {
+            if (PHP_MINOR_VERSION >= 3)
+                $this->_strategy = new Guzzle3();
             //if (PHP_MINOR_VERSION>=4)
             //    $this->_strategy=new Guzzle4();
         } //TODO: should through 'Not Compatible PHP Version' message here
@@ -96,13 +97,12 @@ class Client
                     'email'    => $email,
                     'password' => $password
                 ),
-                null,true
+                null, true
             );
         } catch (BaseException $e) {
             throw $e;
         }
-        if (isset($JSON_response))
-        {
+        if (isset($JSON_response)) {
             $this->_accessToken = $JSON_response->access_token;
         }
     }
@@ -120,41 +120,38 @@ class Client
      * @param array $params
      * @param null $version
      * @param bool $isAuthorization
+     *
      * @return Response
      * @throws ClientException
      * @throws AuthorizeException
      * @throws ServerException
      * @throws Error
      */
-    public function request($httpMethod='GET', $path='',  array $params = null, $version = null, $isAuthorization=false)
+    public function request($httpMethod = 'GET', $path = '', $params = array(), $version = null, $isAuthorization = false)
     {
-        if ($httpMethod!='GET')
-        {
+        if ($httpMethod != 'GET') {
             $post_params = array();
-            if (!$isAuthorization)
-            {
+            if (!$isAuthorization) {
                 $post_params['access_token'] = $this->_accessToken;
                 $api_callback = ApiHelper::getBetween($path, 'admin/', '.json');
-                $parser=explode('/',$api_callback);
-                $api_callback = substr($parser[0],0,-1); //get singular string by remove last s
+                $parser = explode('/', $api_callback);
+                $api_callback = substr($parser[0], 0, -1); //get singular string by remove last s
                 //TODO: get proper singular string for '-es' case.
-                if ($params!=null)
-                    $post_params[$api_callback]=$params;
+                if (!empty($params))
+                    $post_params[$api_callback] = $params;
 
+            } else {
+                $post_params['staff'] = $params;
             }
-            else{
-                $post_params['staff']=$params;
-            }
-            $params=$post_params;
-        }
-        else
-        {
+            $params = $post_params;
+        } else {
             //add access_token to GET api
-            $params['access_token']=$this->_accessToken;
+            $params['access_token'] = $this->_accessToken;
         }
+
         return $this->_strategy->request(
             $httpMethod,
-            $this->_apiUrl.$path,
+            $this->_apiUrl . $path,
             $params, $version, $isAuthorization
         );
     }
@@ -166,7 +163,7 @@ class Client
      *
      * @return Response
      */
-    public function get($path, array $params = null, $version = null)
+    public function get($path, $params = array(), $version = null)
     {
         return $this->request('GET', $path, $params, $version);
     }
@@ -178,7 +175,7 @@ class Client
      *
      * @return Response
      */
-    public function post($path, array $params = null, $version = null)
+    public function post($path, $params = array(), $version = null)
     {
         return $this->request('POST', $path, $params, $version);
     }
@@ -190,7 +187,7 @@ class Client
      *
      * @return Response
      */
-    public function put($path, array $params = null, $version = null)
+    public function put($path, $params = array(), $version = null)
     {
         return $this->request('PUT', $path, $params, $version);
     }
@@ -202,7 +199,7 @@ class Client
      *
      * @return Response
      */
-    public function delete($path, array $params = null, $version = null)
+    public function delete($path, $params = array(), $version = null)
     {
         return $this->request('DELETE', $path, $params, $version);
     }

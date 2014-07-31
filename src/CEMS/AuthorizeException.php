@@ -12,5 +12,6 @@ namespace CEMS;
  * Class AuthorizeException
  * @package CEMS
  */
-class AuthorizeException extends BaseException{
+class AuthorizeException extends BaseException
+{
 } 

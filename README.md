@@ -14,7 +14,7 @@ This is the official PHP-SDK for CEMS's API. [View api documentation and example
 
 You don't need to clone the repo directly to use this SDK, the entire library and its dependencies can be installed through Composer ( [https://getcomposer.org/doc/00-intro.md](https://getcomposer.org/doc/00-intro.md) ).
 
-- First, install Composer if you haven't have it already
+- First, install Composer if you haven't had it already
 
 ```shell
 curl -sS https://getcomposer.org/installer | php
@@ -68,9 +68,14 @@ See below for the most common use cases for this wrapper.
 
 ### Create a RESTful Request
 
-You can create a RESTful request by using following method from an instance of Client class:
+You can create a RESTful request by using one of following method from an instance of Client class:
 
-- `request($httpMethod, $path, $params = NULL)`
+```php
+$client->post($path, $params=array());
+$client->get($path, $params=array());
+$client->get($path, $params=array());
+$client->get($path, $params=array());
+```
 
 For example:
 
@@ -88,24 +93,6 @@ catch (CEMS\Error $e) {
 }
 ```
 
-Or
-
-```php
-$client->post("/admin/subscriptions.json", array(
-    'customer_id'     => $customer_id,
-    'subscriber_list_id'  => $subscriber_list_id
-));
-$client->get("/admin/subscriptions/find_by.json", array(
-    'customer_id'     => $customer_id,
-    'subscriber_list_id'  => $subscriber_list_id
-));
-$client->put("/admin/subscriptions/$id.json", array(
-    'customer_id'     => $customer_id,
-    'subscriber_list_id'  => $subscriber_list_id
-));
-$client->delete("/admin/subscriptions/$id.json");
-```
-
 *NOTE*: You must provide the right path from API documentation.
 *NOTE2*: For the compatibility problem of Guzzle between PHP 5.3 and 5.4, and Composer still not support multiple package version with correspond PHP environment, we assure you that the local test has been passed before release each iterative version.
 
@@ -113,7 +100,6 @@ The request will automatically return a Response object contain JSON data return
 
 ```php
 $customer = $client->get('customers/$id')->getObject(); // CEMS\Resource
-
 $customers = $client->get('customers')->getObjectList('customer'); // CEMS\Collection Class contains many CEMS\Customer elements
 ```
 
@@ -138,7 +124,7 @@ foreach ($customers as $customer) {
 ##Testing
 ---------------------
 
-This project contains PHPUnit tests that check the SDK code and can also be referenced for examples. Most are functional and integrated tests that walk through real user scenarios. In some cases, this means you must have an active network connection with access to HelloSign to execute all tests. Also, your testing account will need at least 1 template for the template tests to pass.
+This project contains PHPUnit tests that check the SDK code and can also be referenced for examples. Most are functional and integrated tests that walk through real user scenarios. In some cases, this means you must have an active network connection with access to CEMS system to execute all tests.
 
 ### To run the tests
 

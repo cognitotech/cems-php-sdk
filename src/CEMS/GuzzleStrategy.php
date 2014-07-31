@@ -9,7 +9,8 @@
 namespace CEMS;
 
 
-interface GuzzleStrategy {
+interface GuzzleStrategy
+{
     /**
      * Request method
      *
@@ -18,11 +19,12 @@ interface GuzzleStrategy {
      * @param array $params
      * @param null $version
      * @param bool $isAuthorization
+     *
      * @return Response|mixed
      * @throws ClientException
      * @throws AuthorizeException
      * @throws ServerException
      * @throws Error
      */
-    public function request($httpMethod='GET', $path='',  array $params = null, $version = null,$isAuthorization=false);
+    public function request($httpMethod = 'GET', $path = '', array $params = null, $version = null, $isAuthorization = false);
 } 

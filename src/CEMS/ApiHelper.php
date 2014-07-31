@@ -9,10 +9,12 @@
 namespace CEMS;
 
 
-class ApiHelper {
+class ApiHelper
+{
 
     /**
      * Helper class
+     *
      * @param $content
      * @param $start
      * @param $end

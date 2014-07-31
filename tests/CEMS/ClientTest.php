@@ -6,6 +6,7 @@
  * Time: 14:20
  */
 namespace CEMS\Tests;
+
 use CEMS;
 use CEMS\Client;
 

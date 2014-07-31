@@ -6,6 +6,7 @@
  * Time: 17:52
  */
 namespace CEMS\Tests;
+
 use CEMS;
 
 /**
@@ -47,11 +48,11 @@ class EventTest extends AbstractResourceTest
     public function testFetchEventCollection()
     {
         //todo: return page num, cur page.
-        $this->_resource=$this->_client->get('/admin/events.json');
-        $this->assertInstanceOf('CEMS\Response',$this->_resource);
-        $this->assertEquals(1,$this->_resource->current_page);
-        $events=$this->_resource->getObjectList('CEMS\Event');
-        $this->assertInstanceOf('CEMS\Event',$events->toArray()[0]);
+        $this->_resource = $this->_client->get('/admin/events.json');
+        $this->assertInstanceOf('CEMS\Response', $this->_resource);
+        $this->assertEquals(1, $this->_resource->current_page);
+        $events = $this->_resource->getObjectList('CEMS\Event')->toArray();
+        $this->assertInstanceOf('CEMS\Event', $events[0]);
     }
 
     /**

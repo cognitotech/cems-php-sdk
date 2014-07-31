@@ -16,6 +16,7 @@ namespace CEMS;
  * @property string $title
  * @property string $id
  */
-class SubscriberList extends Resource{
+class SubscriberList extends Resource
+{
 
 } 

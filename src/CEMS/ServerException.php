@@ -12,6 +12,7 @@ namespace CEMS;
  * Class ServerException
  * @package CEMS
  */
-class ServerException extends BaseException{
+class ServerException extends BaseException
+{
 
 } 
