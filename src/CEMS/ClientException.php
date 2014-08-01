@@ -9,7 +9,7 @@
 namespace CEMS;
 
 /**
- * Class ClientException
+ * Class ClientException contain error response from CEMS API server
  * @package CEMS
  */
 class ClientException extends BaseException

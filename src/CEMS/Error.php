@@ -9,14 +9,11 @@
 namespace CEMS;
 
 /**
- * Class Generic Error
+ * Class Error contains Http request exception thrown when a bad response is received
  * @package CEMS
  */
 class Error extends BaseException
 {
-    /**
-     * @return string
-     */
     public function __toString()
     {
 

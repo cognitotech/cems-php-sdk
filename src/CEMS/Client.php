@@ -16,11 +16,13 @@ class Client
 {
 //TODO: convert to Singleton Object
     /**
+     * API access token
      * @var string
      */
     protected $accessToken = '';
 
     /**
+     * API Url
      * @var string
      */
     protected $apiUrl = '';
@@ -32,7 +34,7 @@ class Client
     protected $strategy;
 
     /**
-     * Helper function for determine PHP version
+     * Helper function to determine PHP version
      */
     protected function getPHPVersion()
     {
@@ -48,7 +50,7 @@ class Client
     }
 
     /**
-     * parse arguments and go to corresponding constructor
+     * Helper for parsing arguments and go to corresponding constructor
      * @return Client object
      */
     function __construct()
@@ -68,6 +70,7 @@ class Client
     }
 
     /**
+     * Constructor with access_token param
      * @param string $access_token
      * @param string $api_url
      */
@@ -78,7 +81,7 @@ class Client
     }
 
     /**
-     * Construct new Client Object
+     * Constructor with email and password params
      *
      * @param string $email
      * @param string $password
@@ -107,18 +110,13 @@ class Client
         }
     }
 
-    function __destruct()
-    {
-
-    }
-
     /**
      * Request method
      *
      * @param string $httpMethod
      * @param string $path
      * @param array $params
-     * @param null $version
+     * @param string $version
      * @param bool $isAuthorization
      *
      * @return Response
@@ -127,7 +125,7 @@ class Client
      * @throws ServerException
      * @throws Error
      */
-    public function request($httpMethod = 'GET', $path = '', $params = array(), $version = null, $isAuthorization = false)
+    public function request($httpMethod = 'GET', $path = '', $params = array(), $version = '', $isAuthorization = false)
     {
         if ($httpMethod != 'GET') {
             $post_params = array();
@@ -157,54 +155,59 @@ class Client
     }
 
     /**
+     * Method supports HTTP GET protocol
      * @param      $path
      * @param array $params
-     * @param null $version
+     * @param string $version
      *
      * @return Response
      */
-    public function get($path, $params = array(), $version = null)
+    public function get($path, $params = array(), $version = '')
     {
         return $this->request('GET', $path, $params, $version);
     }
 
     /**
+     * Method supports HTTP POST protocol
      * @param      $path
      * @param array $params
-     * @param null $version
+     * @param string $version
      *
      * @return Response
      */
-    public function post($path, $params = array(), $version = null)
+    public function post($path, $params = array(), $version = '')
     {
         return $this->request('POST', $path, $params, $version);
     }
 
     /**
+     * Method supports HTTP PUT protocol
      * @param      $path
      * @param array $params
-     * @param null $version
+     * @param string $version
      *
      * @return Response
      */
-    public function put($path, $params = array(), $version = null)
+    public function put($path, $params = array(), $version = '')
     {
         return $this->request('PUT', $path, $params, $version);
     }
 
     /**
+     * Method supports HTTP DELETE protocol
      * @param      $path
      * @param array $params
-     * @param null $version
+     * @param string $version
      *
      * @return Response
      */
-    public function delete($path, $params = array(), $version = null)
+    public function delete($path, $params = array(), $version = '')
     {
         return $this->request('DELETE', $path, $params, $version);
     }
 
     /**
+     * Return access token provided by CEMS API server
      * @return string
      */
     public function getAccessToken()
@@ -213,6 +216,7 @@ class Client
     }
 
     /**
+     * Return url to CEMS API server
      * @return string
      */
     public function getApiUrl()

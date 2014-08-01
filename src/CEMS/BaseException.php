@@ -11,7 +11,19 @@ namespace CEMS;
 use Exception;
 
 /**
- * Class BaseException
+ * Class BaseException 
+ * 
+ * Example Usage:
+ * <?php
+ *  try {
+ *      sth
+ *  }
+ *  catch (BaseException $e)
+ *  {
+ *      echo $e;
+ *      echo $e->getFormattedMessage();
+ *  }
+ * ?>
  * @package CEMS
  */
 class BaseException extends Exception
@@ -23,11 +35,12 @@ class BaseException extends Exception
     protected $response;
 
     /**
-     * @param null $message
+     * BaseException Constructor
+     * @param string $message
      * @param int $code
      * @param Exception $previous
      */
-    function __construct($message = null, $code = 0, Exception $previous = null)
+    function __construct($message = '', $code = 0, Exception $previous = null)
     {
         // make sure everything is assigned properly
         $this->response = $message;
@@ -35,6 +48,7 @@ class BaseException extends Exception
     }
 
     /**
+     * Get proper class name
      * @return string
      * @ignore
      */
@@ -45,7 +59,7 @@ class BaseException extends Exception
 
     /**
      * Helper function to get right exception raise from CEMS API
-     * @return mixed
+     * @return string
      */
     public function getFormattedMessage()
     {

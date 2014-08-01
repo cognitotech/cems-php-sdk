@@ -9,17 +9,20 @@
 namespace CEMS;
 
 /**
- * Class Collection
+ * Class Collection contains array of items from response data.
  * @package CEMS
  */
 class Collection
 {
     /**
+     * Collection data
+     * 
      * @var array
      */
     protected $collection = array();
 
     /**
+     * Constructor
      * @param        $raw_response
      * @param string $type
      */
@@ -38,6 +41,7 @@ class Collection
     }
 
     /**
+     * Get collection data
      * @return array
      */
     public function toArray()

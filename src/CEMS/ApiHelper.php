@@ -8,20 +8,23 @@
 
 namespace CEMS;
 
-
+/**
+ * Class ApiHelper contains some helpers for manipulation string for compatible with CEMS API callback convention
+ * @package CEMS
+ */
 class ApiHelper
 {
 
     /**
-     * Helper class
+     * Get sub string between another sub strings in a parent string
      *
-     * @param $content
-     * @param $start
-     * @param $end
+     * @param string $content
+     * @param string $start
+     * @param string $end
      *
      * @return string
      */
-    static function getBetween($content, $start, $end)
+    static function getBetween($content='', $start='', $end='')
     {
         $r = explode($start, $content);
         if (isset($r[1])) {

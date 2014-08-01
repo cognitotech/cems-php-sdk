@@ -9,9 +9,9 @@
 namespace CEMS;
 
 /**
- * Class Resource
+ * Class Resource is an abstract class contain json data parsed from Response object
  * @package CEMS
- * TODO: add proper magic properties for each class
+ * @property int $id Resource ID
  */
 class Resource
 {
@@ -26,6 +26,7 @@ class Resource
     }
 
     /**
+     * Get raw result as an associative array
      * @return array
      */
     public function toArray()
@@ -34,6 +35,7 @@ class Resource
     }
 
     /**
+     * Get an array of properties value
      * @return array
      */
     public function getPropertyAsArray()
@@ -42,6 +44,7 @@ class Resource
     }
 
     /**
+     * Get array of properties names
      * @return array
      */
     public function getPropertyNames()
@@ -49,20 +52,11 @@ class Resource
         return array_keys($this->data);
     }
 
-    /**
-     * @param $key
-     * @param $value
-     */
     public function __set($key, $value)
     {
         $this->data[$key] = $value;
     }
 
-    /**
-     * @param $key
-     *
-     * @return mixed value
-     */
     public function __get($key)
     {
         if (array_key_exists($key, $this->data)) {
@@ -72,11 +66,6 @@ class Resource
         return null;
     }
 
-    /**
-     * @param $key
-     *
-     * @return bool
-     */
     public function __isset($key)
     {
         return isset($this->data[$key]);

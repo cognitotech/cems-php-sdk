@@ -9,8 +9,17 @@
 namespace CEMS;
 
 /**
- * Class Response
- * @property access_token; //TODO: move to concrete class: AuthorizationResponse
+ * Class Response is using for handling data result from request method of Client object
+ * 
+ * TODO: move to concrete class: AuthorizationResponse
+ * @property string $access_token Access Token; 
+ * TODO: move to concrete class: CollectionResponse
+ * @property int $per_page Maximum Item Per Page
+ * @property int $current_page Current Page Number
+ * @property int $total_pages Total Pages Count
+ * @property int $total_entries Total Entries Count
+ * @property int $offset Offset
+ * @property int $length Number of item in current page
  * @package CEMS
  */
 class Response
@@ -29,6 +38,7 @@ class Response
     }
 
     /**
+     * Return list of item with specified class name
      * @param string $type
      *
      * @return Collection
@@ -39,6 +49,7 @@ class Response
     }
 
     /**
+     * Return signle item with specified class name
      * @param string $type
      *
      * @return object
@@ -54,11 +65,6 @@ class Response
         return $object;
     }
 
-    /**
-     * @param $key
-     *
-     * @return value
-     */
     public function __get($key)
     {
         if (array_key_exists($key, $this->response)) {
@@ -68,11 +74,6 @@ class Response
         return null;
     }
 
-    /**
-     * @param $key
-     *
-     * @return bool
-     */
     public function __isset($key)
     {
         return isset($this->response[$key]);

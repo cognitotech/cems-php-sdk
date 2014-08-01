@@ -9,7 +9,9 @@
 namespace CEMS;
 
 /**
- * Class SubscriberList
+ * Class SubscriberList is a concreted class of the abstract CEMS\Resource class
+ *
+ * SubscriberList contains data of subscribed list from the CEMS API Server
  * @package CEMS
  *
  * @property string $download_link

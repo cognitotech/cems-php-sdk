@@ -11,7 +11,10 @@ namespace CEMS;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception as GuzzleException;
 
-
+/**
+ * Class Guzzle4
+ * @package CEMS
+ */
 class Guzzle4 implements GuzzleStrategy
 {
     /**

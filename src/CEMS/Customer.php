@@ -11,20 +11,20 @@ namespace CEMS;
 use DateTime;
 
 /**
- * Class Customer
+ * Class Customer is a concreted class of the abstract CEMS\Resource class
  *
  * @package CEMS
- * @property string last_name
- * @property string full_name
- * @property string first_name
- * @property string password
- * @property string phone
- * @property string email
- * @property DateTime birthday
- * @property string gender
- * @property string address
- * @property string subscription_status
- * @property string place
+ * @property string $last_name Last Name
+ * @property string $full_name Full Name
+ * @property string $first_name First Name
+ * @property string $password Password
+ * @property string $phone Phone
+ * @property string $email Email
+ * @property string $birthday Birthday
+ * @property string $gender Gender
+ * @property string $address Address
+ * @property string $subscription_status Subscription Status
+ * @property string $place Place
  *
  */
 class Customer extends Resource

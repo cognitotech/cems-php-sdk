@@ -9,7 +9,7 @@
 namespace CEMS;
 
 /**
- * Class ServerException
+ * Class ServerException contains error when sending data to CEMS API server, it's often because of your own server's configuration
  * @package CEMS
  */
 class ServerException extends BaseException

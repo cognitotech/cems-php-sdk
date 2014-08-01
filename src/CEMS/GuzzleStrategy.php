@@ -8,11 +8,14 @@
 
 namespace CEMS;
 
-
+/**
+ * Interface GuzzleStrategy
+ * @package CEMS
+ */
 interface GuzzleStrategy
 {
     /**
-     * Request method
+     * Abstract HTTP Request method using Guzzle
      *
      * @param string $httpMethod
      * @param string $path
