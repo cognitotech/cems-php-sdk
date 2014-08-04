@@ -22,14 +22,18 @@ class Collection
     protected $collection = array();
 
     /**
-     * Constructor
+     * Collection Constructor
+     *
+     * If there is no entry return from response data, it will return an empty collection.
+     *
      * @param        $raw_response
      * @param string $type
      */
     function __construct($raw_response, $type = 'CEMS\Resource')
     {
         $this->collection = array();
-
+        if ($raw_response['total_entries'] == 0)
+            return;
         $class = ucwords($type);
         if (class_exists($class)) {
             foreach ($raw_response['collection'] as $item) {

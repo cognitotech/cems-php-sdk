@@ -19,11 +19,11 @@ abstract class AbstractResourceTest extends \PHPUnit_Framework_TestCase
     /**
      * @var CEMS\Client
      */
-    protected $_client;
+    protected $client;
 
-    protected $_resource;
+    protected $resource;
 
-    protected $_collection;
+    protected $collection;
 
     /**
      * Setup API Client ready for Test
@@ -32,7 +32,7 @@ abstract class AbstractResourceTest extends \PHPUnit_Framework_TestCase
     {
         parent::setUp();
         AbstractResourceTest::setEnvVar();
-        $this->_client = new CEMS\Client($_ENV['API_KEY'], $_ENV['API_URL']);
+        $this->client = new CEMS\Client($_ENV['API_KEY'], $_ENV['API_URL']);
     }
 
     /**

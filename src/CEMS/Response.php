@@ -25,16 +25,23 @@ namespace CEMS;
 class Response
 {
     /**
-     * @var $response contain raw data in JSON format
+     * @var array $response Raw data in JSON format
      */
     protected $response = array();
 
     /**
-     * @param $JSON_data
+     * @var int $statusCode Response Status Code
      */
-    function __construct($JSON_data)
+    protected $statusCode = 404;
+
+    /**
+     * @param array $JSON_data Response's JSON data
+     * @param int $status Response's Status
+     */
+    function __construct($JSON_data, $status)
     {
         $this->response = $JSON_data;
+        $this->statusCode = $status;
     }
 
     /**
@@ -49,7 +56,7 @@ class Response
     }
 
     /**
-     * Return signle item with specified class name
+     * Return single item with specified class name
      * @param string $type
      *
      * @return object
@@ -63,6 +70,15 @@ class Response
         }
 
         return $object;
+    }
+
+    /**
+     * Return status code of response
+     * @return int
+     */
+    public function getStatusCode()
+    {
+        return $this->statusCode;
     }
 
     public function __get($key)
