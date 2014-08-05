@@ -61,7 +61,7 @@ class Guzzle3 implements GuzzleStrategy
         } catch (GuzzleException\BadResponseException $e) {
             throw new Error($e->getResponse(), $e->getResponse()->getStatusCode(), $e->getPrevious());
         }
-        $response = new Response($res->json(),$res->getStatusCode();
+        $response = new Response($res->json(),$res->getStatusCode());
 
         return $response;
     }
