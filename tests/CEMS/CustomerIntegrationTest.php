@@ -116,7 +116,7 @@ class CustomerTest extends AbstractResourceTest
         $this->resource = $customer;
         $this->assertNotNull($this->resource->id);
         $response = $this->client->get('/admin/customers/' . $this->resource->id . '/event_registers.json');
-        if ($response['total_entries']>0)
+        if ($response->total_entries>0)
         {
             $events = $response->getObjectList('CEMS\EventRegister');
             $collection = $events->toArray();
@@ -160,7 +160,7 @@ class CustomerTest extends AbstractResourceTest
         $this->resource = $customer;
         $this->assertNotNull($this->resource->id);
         $response = $this->client->get('/admin/customers/' . $this->resource->id . '/subscriptions.json');
-        if ($response['total_entries']>0)
+        if ($response->total_entries>0)
         {
             $subscriptions = $response->getObjectList('CEMS\Subscription');
             $collection = $subscriptions->toArray();

@@ -22,6 +22,21 @@ class Collection
     protected $collection = array();
 
     /**
+     * Collection results' params
+     * 
+     * @var array{
+     *      An array of  Collection's Parameters
+     *          @type int $per_page Per Page
+     *          @type int $current_page Current Page
+     *          @type int $total_pages Total Pages
+     *          @type int $total_entries Total  Entries
+     *          @type int $offset Offset
+     *          @type int $length Length
+     * }
+     */
+     protected $params = array();
+
+    /**
      * Collection Constructor
      *
      * If there is no entry return from response data, it will return an empty collection.
@@ -32,7 +47,11 @@ class Collection
     function __construct($raw_response, $type = 'CEMS\Resource')
     {
         $this->collection = array();
-        if ($raw_response['total_entries'] == 0)
+
+        //Save page num, current page to this class
+        $params = $raw_response;
+        unset($params['collection']);
+        if ($params['total_entries'] == 0)
             return;
         $class = ucwords($type);
         if (class_exists($class)) {
@@ -41,7 +60,6 @@ class Collection
                 array_push($this->collection, $object);
             }
         }
-        //TODO: save page num, current page to this class
     }
 
     /**
@@ -52,4 +70,19 @@ class Collection
     {
         return $this->collection;
     }
+
+    public function __get($key)
+    {
+        if (array_key_exists($key, $this->params)) {
+            return $this->params[$key];
+        }
+
+        return null;
+    }
+
+    public function __isset($key)
+    {
+        return isset($this->params[$key]);
+    }
+
 } 
