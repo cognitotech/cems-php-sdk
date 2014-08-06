@@ -11,8 +11,8 @@ namespace CEMS;
 use Exception;
 
 /**
- * Class BaseException 
- * 
+ * Class BaseException
+ *
  * Example Usage:
  * <?php
  *  try {
@@ -36,6 +36,7 @@ class BaseException extends Exception
 
     /**
      * BaseException Constructor
+     *
      * @param string $message
      * @param int $code
      * @param Exception $previous
@@ -88,6 +89,11 @@ class BaseException extends Exception
         return $result;
     }
 
+    /**
+     * Print exception's message in following format: <ExceptionClassName>: [<status_code>]: <formatted reason>
+     *
+     * @return string
+     */
     public function __toString()
     {
         return get_class($this) . ": [{$this->code}]: {$this->getFormattedMessage()}";

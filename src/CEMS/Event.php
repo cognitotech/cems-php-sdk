@@ -10,14 +10,14 @@ namespace CEMS;
 
 /**
  * Class Event is a concreted class of the abstract CEMS\Resource class
- * 
+ *
  * @package CEMS
  * @property int $id Event ID
  * @property int $category_id Category ID
  * @property string $code Code
  * @property string $title Title
- * @property string $start_at Started Date 
- * @property string $end_at Ended Date 
+ * @property string $start_at Started Date
+ * @property string $end_at Ended Date
  * @property bool $is_daylong Daylong Flag
  * @property string $venue Venue
  * @property string $description Description
@@ -39,17 +39,17 @@ namespace CEMS;
  * @property string $original_fees_formated Original Fees Format
  * @property array $category Category
  * @property array $customer_counts_by_group {
- * 	An array of  Customer Counts by group
+ *    An array of  Customer Counts by group
  *
- *	@type int $yesterday Yesterday Counter
- *	@type int $total Total Counter
- * 	@type int $potential Potential Counter
- * 	@type int $not_interested Not Interested Counter
- * 	@type int $interested Interested Counter
- * 	@type int $committed Committed Counter
- * 	@type int $confirmed Confirmed Counter
- * 	@type int $attended Attended Counter
- *	@type int $cancelled Cancelled Counter
+ * @type int $yesterday Yesterday Counter
+ * @type int $total Total Counter
+ * @type int $potential Potential Counter
+ * @type int $not_interested Not Interested Counter
+ * @type int $interested Interested Counter
+ * @type int $committed Committed Counter
+ * @type int $confirmed Confirmed Counter
+ * @type int $attended Attended Counter
+ * @type int $cancelled Cancelled Counter
  * }
  */
 class Event extends Resource

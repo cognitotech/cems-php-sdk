@@ -116,14 +116,15 @@ class CustomerTest extends AbstractResourceTest
         $this->resource = $customer;
         $this->assertNotNull($this->resource->id);
         $response = $this->client->get('/admin/customers/' . $this->resource->id . '/event_registers.json');
-        if ($response->total_entries>0)
-        {
+        if ($response->total_entries > 0) {
             $events = $response->getObjectList('CEMS\EventRegister');
             $collection = $events->toArray();
             $this->assertInstanceOf('CEMS\Collection', $events);
             $this->assertInstanceOf('CEMS\EventRegister', $collection[0]);
+
             return $events;
         }
+
         return null;
     }
 
@@ -139,10 +140,10 @@ class CustomerTest extends AbstractResourceTest
     {
         $this->collection = $events;
         $this->assertNotNull($this->collection);
-        $event_array=$this->collection->toArray();
+        $event_array = $this->collection->toArray();
         foreach ($event_array as $event):
             $response = $this->client->delete('/admin/event_registers/' . $event->id . '.json');
-            $this->assertEquals(204,$response->getStatusCode());
+            $this->assertEquals(204, $response->getStatusCode());
         endforeach;
     }
 
@@ -160,14 +161,15 @@ class CustomerTest extends AbstractResourceTest
         $this->resource = $customer;
         $this->assertNotNull($this->resource->id);
         $response = $this->client->get('/admin/customers/' . $this->resource->id . '/subscriptions.json');
-        if ($response->total_entries>0)
-        {
+        if ($response->total_entries > 0) {
             $subscriptions = $response->getObjectList('CEMS\Subscription');
             $collection = $subscriptions->toArray();
             $this->assertInstanceOf('CEMS\Collection', $subscriptions);
             $this->assertInstanceOf('CEMS\Subscription', $collection[0]);
+
             return $subscriptions;
         }
+
         return null;
     }
 
@@ -182,10 +184,10 @@ class CustomerTest extends AbstractResourceTest
     {
         $this->collection = $subscriptions;
         $this->assertNotNull($this->collection);
-        $subscription_array=$this->collection->toArray();
+        $subscription_array = $this->collection->toArray();
         foreach ($subscription_array as $subscription):
             $response = $this->client->delete('/admin/subscriptions/' . $subscription->id . '.json');
-            $this->assertEquals(204,$response->getStatusCode());
+            $this->assertEquals(204, $response->getStatusCode());
         endforeach;
     }
 

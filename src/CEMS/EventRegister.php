@@ -39,10 +39,10 @@ namespace CEMS;
  * @property int $before_discounted_fees Before Discounted Fees
  * @property string $amount_paid_formated Amount Paid
  * @property array $status {
- * 	An array of status
+ *    An array of status
  *
- *	@type string $color Color
- *	@type string $title Title
+ * @type string $color Color
+ * @type string $title Title
  * }
  */
 class EventRegister extends Resource

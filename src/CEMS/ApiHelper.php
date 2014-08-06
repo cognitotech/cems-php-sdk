@@ -24,7 +24,7 @@ class ApiHelper
      *
      * @return string
      */
-    static function getBetween($content='', $start='', $end='')
+    static function getBetween($content = '', $start = '', $end = '')
     {
         $r = explode($start, $content);
         if (isset($r[1])) {
