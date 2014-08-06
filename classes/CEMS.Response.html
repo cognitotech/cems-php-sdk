@@ -114,7 +114,7 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="../reports/errors.html">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">12</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">0</span>
                                 </a>
                             </li>
                             <li>
@@ -144,19 +144,19 @@
                                 <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1083147813"></a>
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-1198207926"></a>
                                 <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
             </div>
-            <div id="namespace-1083147813" class="accordion-body collapse in">
+            <div id="namespace-1198207926" class="accordion-body collapse in">
                 <div class="accordion-inner">
 
                                                     <div class="accordion" style="margin-bottom: 0">
         <div class="accordion-group">
             <div class="accordion-heading">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-345809563"></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-target="#namespace-501112639"></a>
                                 <a href="../namespaces/CEMS.html" style="margin-left: 30px; padding-left: 0">CEMS</a>
             </div>
-            <div id="namespace-345809563" class="accordion-body collapse ">
+            <div id="namespace-501112639" class="accordion-body collapse ">
                 <div class="accordion-inner">
 
                     
@@ -533,7 +533,7 @@ TODO: move to concrete class: CollectionResponse</p>
                 <h3 class="public ">__construct()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
                 <pre class="signature" style="margin-right: 54px;">__construct(array <span class="argument">$JSON_data</span>, integer <span class="argument">$status</span>)</pre>
-                <p><em></em></p>
+                <p><em>Constructor</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -667,8 +667,8 @@ TODO: move to concrete class: CollectionResponse</p>
             <article class="method">
                 <h3 class="public ">__get()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__get( <span class="argument">$key</span>)</pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">__get( <span class="argument">$key</span>) : mixed</pre>
+                <p><em>Getter for data inside respond</em></p>
                 
 
                                     <h4>Parameters</h4>
@@ -681,7 +681,10 @@ TODO: move to concrete class: CollectionResponse</p>
                                             </table>
                 
                 
-                            </article>
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>value</p>
+                                                </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -700,21 +703,23 @@ TODO: move to concrete class: CollectionResponse</p>
             <article class="method">
                 <h3 class="public ">__isset()</h3>
                 <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
-                <pre class="signature" style="margin-right: 54px;">__isset( <span class="argument">$key</span>)</pre>
-                <p><em></em></p>
+                <pre class="signature" style="margin-right: 54px;">__isset(string <span class="argument">$key</span>) : boolean</pre>
+                <p><em>Check whether the value correspond to the key exist inside response</em></p>
                 
 
                                     <h4>Parameters</h4>
                     <table class="table table-condensed table-hover">
                                                     <tr>
-                                <td></td>
+                                <td>string</td>
                                 <td>$key </td>
                                 <td></td>
                             </tr>
                                             </table>
                 
                 
-                            </article>
+                                    <h4>Returns</h4>
+                    boolean
+                                                </article>
         </div>
         <aside class="span4 detailsbar">
             <h1><i class="icon-arrow-down"></i></h1>
@@ -777,7 +782,7 @@ TODO: move to concrete class: CollectionResponse</p>
                 <section class="span10 offset1">
                     <hr />
                     Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
-                    on August 6th, 2014 at 11:10.
+                    on August 6th, 2014 at 18:00.
                 </section>
             </section>
         </section>

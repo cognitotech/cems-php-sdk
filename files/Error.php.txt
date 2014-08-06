@@ -10,10 +10,16 @@ namespace CEMS;
 
 /**
  * Class Error contains Http request exception thrown when a bad response is received
+ *
  * @package CEMS
  */
 class Error extends BaseException
 {
+    /**
+     * Print exception's message in following format: <ExceptionClassName>: [<status_code>]: <formatted reason>
+     *
+     * @return string
+     */
     public function __toString()
     {
 

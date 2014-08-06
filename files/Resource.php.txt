@@ -16,10 +16,16 @@ namespace CEMS;
 class Resource
 {
     /**
+     * Json Data as an associated array
+     *
      * @var array
      */
     protected $data = array();
 
+    /**
+     * Constructor
+     * @param array $json_object Json array
+     */
     function __construct($json_object)
     {
         $this->data = $json_object;
@@ -52,11 +58,24 @@ class Resource
         return array_keys($this->data);
     }
 
+    /**
+     * Setter for data inside resource
+     *
+     * @param $key
+     * @param $value
+     */
     public function __set($key, $value)
     {
         $this->data[$key] = $value;
     }
 
+    /**
+     * Getter for data inside resource
+     *
+     * @param $key
+     *
+     * @return mixed value
+     */
     public function __get($key)
     {
         if (array_key_exists($key, $this->data)) {
@@ -66,6 +85,12 @@ class Resource
         return null;
     }
 
+    /**
+     * Check whether the value correspond to the key exist inside resource
+     * @param string $key
+     *
+     * @return bool
+     */
     public function __isset($key)
     {
         return isset($this->data[$key]);

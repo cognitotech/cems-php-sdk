@@ -12,7 +12,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception as GuzzleException;
 
 /**
- * Class Guzzle4
+ * Class Guzzle4 is an implementation of GuzzleStrategy using Guzzle version 4 for handling RESTful API
  * @package CEMS
  */
 class Guzzle4 implements GuzzleStrategy
@@ -56,7 +56,7 @@ class Guzzle4 implements GuzzleStrategy
         } catch (GuzzleException\BadResponseException $e) {
             throw new Error($e->getResponse(), $e->getCode(), $e->getPrevious());
         }
-        $response = new Response($res->json(),$res->getCode());
+        $response = new Response($res->json(), $res->getCode());
 
         return $response;
     }

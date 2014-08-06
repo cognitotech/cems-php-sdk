@@ -9,12 +9,13 @@
 namespace CEMS;
 
 /**
- * Class Client
+ * Class Client contains the PHP interface to interact with CEMS API
  * @package CEMS
  */
 class Client
 {
-//TODO: convert to Singleton Object
+    //TODO: convert to Singleton Object
+
     /**
      * API access token
      * @var string
@@ -71,6 +72,7 @@ class Client
 
     /**
      * Constructor with access_token param
+     *
      * @param string $access_token
      * @param string $api_url
      */
@@ -156,6 +158,7 @@ class Client
 
     /**
      * Method supports HTTP GET protocol
+     *
      * @param      $path
      * @param array $params
      * @param string $version
@@ -169,6 +172,7 @@ class Client
 
     /**
      * Method supports HTTP POST protocol
+     *
      * @param      $path
      * @param array $params
      * @param string $version
@@ -182,6 +186,7 @@ class Client
 
     /**
      * Method supports HTTP PUT protocol
+     *
      * @param      $path
      * @param array $params
      * @param string $version
@@ -195,6 +200,7 @@ class Client
 
     /**
      * Method supports HTTP DELETE protocol
+     *
      * @param      $path
      * @param array $params
      * @param string $version

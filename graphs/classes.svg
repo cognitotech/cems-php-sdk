@@ -17,160 +17,160 @@
 <path fill="none" stroke="gray" d="M174,-16C174,-16 430,-16 430,-16 436,-16 442,-22 442,-28 442,-28 442,-832 442,-832 442,-838 436,-844 430,-844 430,-844 174,-844 174,-844 168,-844 162,-838 162,-832 162,-832 162,-28 162,-28 162,-22 168,-16 174,-16"/>
 <text text-anchor="middle" x="302" y="-831.2" font-family="Times,serif" font-size="11.00" fill="gray">CEMS</text>
 </g>
+<!-- \\CEMS\\Event -->
+<g id="node1" class="node"><title>\\CEMS\\Event</title>
+<polygon fill="none" stroke="black" points="408,-816 354,-816 354,-780 408,-780 408,-816"/>
+<text text-anchor="middle" x="381" y="-795.2" font-family="Times,serif" font-size="11.00">Event</text>
+</g>
+<!-- \\CEMS\\Resource -->
+<g id="node12" class="node"><title>\\CEMS\\Resource</title>
+<polygon fill="none" stroke="black" points="242.5,-546 183.5,-546 183.5,-510 242.5,-510 242.5,-546"/>
+<text text-anchor="middle" x="213" y="-525.2" font-family="Times,serif" font-size="11.00">Resource</text>
+</g>
+<!-- \\CEMS\\Event&#45;&gt;\\CEMS\\Resource -->
+<g id="edge1" class="edge"><title>\\CEMS\\Event&#45;&gt;\\CEMS\\Resource</title>
+<path fill="none" stroke="black" d="M353.99,-788.567C344.903,-784.289 335.188,-778.483 328,-771 266.95,-707.441 233.885,-605.17 220.776,-556.073"/>
+<polygon fill="none" stroke="black" points="224.104,-554.965 218.209,-546.161 217.328,-556.719 224.104,-554.965"/>
+</g>
+<!-- \\CEMS\\Response -->
+<g id="node2" class="node"><title>\\CEMS\\Response</title>
+<polygon fill="none" stroke="black" points="410.5,-762 351.5,-762 351.5,-726 410.5,-726 410.5,-762"/>
+<text text-anchor="middle" x="381" y="-741.2" font-family="Times,serif" font-size="11.00">Response</text>
+</g>
+<!-- \\CEMS\\Collection -->
+<g id="node3" class="node"><title>\\CEMS\\Collection</title>
+<polygon fill="none" stroke="black" points="412,-708 350,-708 350,-672 412,-672 412,-708"/>
+<text text-anchor="middle" x="381" y="-687.2" font-family="Times,serif" font-size="11.00">Collection</text>
+</g>
+<!-- \\CEMS\\ApiHelper -->
+<g id="node4" class="node"><title>\\CEMS\\ApiHelper</title>
+<polygon fill="none" stroke="black" points="413,-654 349,-654 349,-618 413,-618 413,-654"/>
+<text text-anchor="middle" x="381" y="-633.2" font-family="Times,serif" font-size="11.00">ApiHelper</text>
+</g>
+<!-- \\CEMS\\Error -->
+<g id="node5" class="node"><title>\\CEMS\\Error</title>
+<polygon fill="none" stroke="black" points="408,-222 354,-222 354,-186 408,-186 408,-222"/>
+<text text-anchor="middle" x="381" y="-201.2" font-family="Times,serif" font-size="11.00">Error</text>
+</g>
 <!-- \\CEMS\\BaseException -->
-<g id="node1" class="node"><title>\\CEMS\\BaseException</title>
-<polygon fill="none" stroke="black" points="254.5,-627 171.5,-627 171.5,-591 254.5,-591 254.5,-627"/>
-<text text-anchor="middle" x="213" y="-606.2" font-family="Times,serif" font-size="11.00">BaseException</text>
+<g id="node13" class="node"><title>\\CEMS\\BaseException</title>
+<polygon fill="none" stroke="black" points="254.5,-303 171.5,-303 171.5,-267 254.5,-267 254.5,-303"/>
+<text text-anchor="middle" x="213" y="-282.2" font-family="Times,serif" font-size="11.00">BaseException</text>
 </g>
-<!-- \\Exception -->
-<g id="node19" class="node"><title>\\Exception</title>
-<ellipse fill="none" stroke="black" cx="49" cy="-609" rx="48.9926" ry="18"/>
-<text text-anchor="middle" x="49" y="-605.3" font-family="Times,serif" font-size="14.00" fill="gray">\Exception</text>
+<!-- \\CEMS\\Error&#45;&gt;\\CEMS\\BaseException -->
+<g id="edge2" class="edge"><title>\\CEMS\\Error&#45;&gt;\\CEMS\\BaseException</title>
+<path fill="none" stroke="black" d="M353.697,-216.835C328.593,-229.084 290.235,-247.801 260.06,-262.525"/>
+<polygon fill="none" stroke="black" points="258.434,-259.424 250.982,-266.955 261.504,-265.715 258.434,-259.424"/>
 </g>
-<!-- \\CEMS\\BaseException&#45;&gt;\\Exception -->
-<g id="edge1" class="edge"><title>\\CEMS\\BaseException&#45;&gt;\\Exception</title>
-<path fill="none" stroke="black" d="M171.121,-609C151.949,-609 128.766,-609 107.836,-609"/>
-<polygon fill="none" stroke="black" points="107.77,-605.5 97.7701,-609 107.77,-612.5 107.77,-605.5"/>
+<!-- \\CEMS\\Customer -->
+<g id="node6" class="node"><title>\\CEMS\\Customer</title>
+<polygon fill="none" stroke="black" points="410.5,-600 351.5,-600 351.5,-564 410.5,-564 410.5,-600"/>
+<text text-anchor="middle" x="381" y="-579.2" font-family="Times,serif" font-size="11.00">Customer</text>
 </g>
-<!-- \\CEMS\\Guzzle3 -->
-<g id="node2" class="node"><title>\\CEMS\\Guzzle3</title>
-<polygon fill="none" stroke="black" points="408,-762 354,-762 354,-726 408,-726 408,-762"/>
-<text text-anchor="middle" x="381" y="-741.2" font-family="Times,serif" font-size="11.00">Guzzle3</text>
+<!-- \\CEMS\\Customer&#45;&gt;\\CEMS\\Resource -->
+<g id="edge3" class="edge"><title>\\CEMS\\Customer&#45;&gt;\\CEMS\\Resource</title>
+<path fill="none" stroke="black" d="M351.464,-572.717C324.146,-563.831 282.737,-550.36 252.507,-540.526"/>
+<polygon fill="none" stroke="black" points="253.312,-537.108 242.72,-537.343 251.146,-543.764 253.312,-537.108"/>
+</g>
+<!-- \\CEMS\\ServerException -->
+<g id="node7" class="node"><title>\\CEMS\\ServerException</title>
+<polygon fill="none" stroke="black" points="426,-384 336,-384 336,-348 426,-348 426,-384"/>
+<text text-anchor="middle" x="381" y="-363.2" font-family="Times,serif" font-size="11.00">ServerException</text>
+</g>
+<!-- \\CEMS\\ServerException&#45;&gt;\\CEMS\\BaseException -->
+<g id="edge4" class="edge"><title>\\CEMS\\ServerException&#45;&gt;\\CEMS\\BaseException</title>
+<path fill="none" stroke="black" d="M342.746,-347.822C318.398,-335.941 286.411,-320.333 260.412,-307.647"/>
+<polygon fill="none" stroke="black" points="261.651,-304.357 251.129,-303.117 258.582,-310.648 261.651,-304.357"/>
+</g>
+<!-- \\CEMS\\EventRegister -->
+<g id="node8" class="node"><title>\\CEMS\\EventRegister</title>
+<polygon fill="none" stroke="black" points="421,-546 341,-546 341,-510 421,-510 421,-546"/>
+<text text-anchor="middle" x="381" y="-525.2" font-family="Times,serif" font-size="11.00">EventRegister</text>
+</g>
+<!-- \\CEMS\\EventRegister&#45;&gt;\\CEMS\\Resource -->
+<g id="edge5" class="edge"><title>\\CEMS\\EventRegister&#45;&gt;\\CEMS\\Resource</title>
+<path fill="none" stroke="black" d="M340.66,-528C314.083,-528 279.157,-528 252.712,-528"/>
+<polygon fill="none" stroke="black" points="252.669,-524.5 242.669,-528 252.669,-531.5 252.669,-524.5"/>
+</g>
+<!-- \\CEMS\\Subscription -->
+<g id="node9" class="node"><title>\\CEMS\\Subscription</title>
+<polygon fill="none" stroke="black" points="416.5,-492 345.5,-492 345.5,-456 416.5,-456 416.5,-492"/>
+<text text-anchor="middle" x="381" y="-471.2" font-family="Times,serif" font-size="11.00">Subscription</text>
+</g>
+<!-- \\CEMS\\Subscription&#45;&gt;\\CEMS\\Resource -->
+<g id="edge6" class="edge"><title>\\CEMS\\Subscription&#45;&gt;\\CEMS\\Resource</title>
+<path fill="none" stroke="black" d="M345.201,-485.32C318.106,-494.134 280.523,-506.36 252.523,-515.468"/>
+<polygon fill="none" stroke="black" points="251.105,-512.249 242.678,-518.671 253.27,-518.906 251.105,-512.249"/>
+</g>
+<!-- \\CEMS\\Guzzle4 -->
+<g id="node10" class="node"><title>\\CEMS\\Guzzle4</title>
+<polygon fill="none" stroke="black" points="408,-114 354,-114 354,-78 408,-78 408,-114"/>
+<text text-anchor="middle" x="381" y="-93.2" font-family="Times,serif" font-size="11.00">Guzzle4</text>
 </g>
 <!-- \\CEMS\\GuzzleStrategy -->
 <g id="node18" class="node"><title>\\CEMS\\GuzzleStrategy</title>
-<polygon fill="none" stroke="black" points="256,-789 170,-789 170,-753 256,-753 256,-789"/>
-<text text-anchor="middle" x="213" y="-768.2" font-family="Times,serif" font-size="11.00">GuzzleStrategy</text>
-</g>
-<!-- \\CEMS\\Guzzle3&#45;&gt;\\CEMS\\GuzzleStrategy -->
-<g id="edge2" class="edge"><title>\\CEMS\\Guzzle3&#45;&gt;\\CEMS\\GuzzleStrategy</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M353.697,-748.278C330.226,-752.096 295.169,-757.798 266.047,-762.535"/>
-<polygon fill="none" stroke="black" points="265.33,-759.105 256.022,-764.165 266.454,-766.014 265.33,-759.105"/>
-</g>
-<!-- \\CEMS\\ServerException -->
-<g id="node3" class="node"><title>\\CEMS\\ServerException</title>
-<polygon fill="none" stroke="black" points="426,-492 336,-492 336,-456 426,-456 426,-492"/>
-<text text-anchor="middle" x="381" y="-471.2" font-family="Times,serif" font-size="11.00">ServerException</text>
-</g>
-<!-- \\CEMS\\ServerException&#45;&gt;\\CEMS\\BaseException -->
-<g id="edge3" class="edge"><title>\\CEMS\\ServerException&#45;&gt;\\CEMS\\BaseException</title>
-<path fill="none" stroke="black" d="M342.049,-492.109C337.194,-494.884 332.392,-497.873 328,-501 293.479,-525.575 258.853,-560.12 236.975,-583.47"/>
-<polygon fill="none" stroke="black" points="234.293,-581.215 230.063,-590.929 239.427,-585.973 234.293,-581.215"/>
-</g>
-<!-- \\CEMS\\Error -->
-<g id="node4" class="node"><title>\\CEMS\\Error</title>
-<polygon fill="none" stroke="black" points="408,-708 354,-708 354,-672 408,-672 408,-708"/>
-<text text-anchor="middle" x="381" y="-687.2" font-family="Times,serif" font-size="11.00">Error</text>
-</g>
-<!-- \\CEMS\\Error&#45;&gt;\\CEMS\\BaseException -->
-<g id="edge4" class="edge"><title>\\CEMS\\Error&#45;&gt;\\CEMS\\BaseException</title>
-<path fill="none" stroke="black" d="M353.697,-677.165C328.593,-664.916 290.235,-646.199 260.06,-631.475"/>
-<polygon fill="none" stroke="black" points="261.504,-628.285 250.982,-627.045 258.434,-634.576 261.504,-628.285"/>
-</g>
-<!-- \\CEMS\\Guzzle4 -->
-<g id="node5" class="node"><title>\\CEMS\\Guzzle4</title>
-<polygon fill="none" stroke="black" points="408,-816 354,-816 354,-780 408,-780 408,-816"/>
-<text text-anchor="middle" x="381" y="-795.2" font-family="Times,serif" font-size="11.00">Guzzle4</text>
+<polygon fill="none" stroke="black" points="256,-87 170,-87 170,-51 256,-51 256,-87"/>
+<text text-anchor="middle" x="213" y="-66.2" font-family="Times,serif" font-size="11.00">GuzzleStrategy</text>
 </g>
 <!-- \\CEMS\\Guzzle4&#45;&gt;\\CEMS\\GuzzleStrategy -->
-<g id="edge5" class="edge"><title>\\CEMS\\Guzzle4&#45;&gt;\\CEMS\\GuzzleStrategy</title>
-<path fill="none" stroke="black" stroke-dasharray="1,5" d="M353.697,-793.722C330.226,-789.904 295.169,-784.202 266.047,-779.465"/>
-<polygon fill="none" stroke="black" points="266.454,-775.986 256.022,-777.835 265.33,-782.895 266.454,-775.986"/>
-</g>
-<!-- \\CEMS\\Event -->
-<g id="node6" class="node"><title>\\CEMS\\Event</title>
-<polygon fill="none" stroke="black" points="408,-114 354,-114 354,-78 408,-78 408,-114"/>
-<text text-anchor="middle" x="381" y="-93.2" font-family="Times,serif" font-size="11.00">Event</text>
-</g>
-<!-- \\CEMS\\Resource -->
-<g id="node9" class="node"><title>\\CEMS\\Resource</title>
-<polygon fill="none" stroke="black" points="242.5,-276 183.5,-276 183.5,-240 242.5,-240 242.5,-276"/>
-<text text-anchor="middle" x="213" y="-255.2" font-family="Times,serif" font-size="11.00">Resource</text>
-</g>
-<!-- \\CEMS\\Event&#45;&gt;\\CEMS\\Resource -->
-<g id="edge6" class="edge"><title>\\CEMS\\Event&#45;&gt;\\CEMS\\Resource</title>
-<path fill="none" stroke="black" d="M353.926,-107.047C345.233,-111.361 335.787,-116.777 328,-123 288.257,-154.761 252.164,-202.027 231.671,-231.38"/>
-<polygon fill="none" stroke="black" points="228.609,-229.655 225.825,-239.878 234.376,-233.623 228.609,-229.655"/>
-</g>
-<!-- \\CEMS\\Client -->
-<g id="node7" class="node"><title>\\CEMS\\Client</title>
-<polygon fill="none" stroke="black" points="408,-546 354,-546 354,-510 408,-510 408,-546"/>
-<text text-anchor="middle" x="381" y="-525.2" font-family="Times,serif" font-size="11.00">Client</text>
-</g>
-<!-- \\CEMS\\Subscription -->
-<g id="node8" class="node"><title>\\CEMS\\Subscription</title>
-<polygon fill="none" stroke="black" points="416.5,-60 345.5,-60 345.5,-24 416.5,-24 416.5,-60"/>
-<text text-anchor="middle" x="381" y="-39.2" font-family="Times,serif" font-size="11.00">Subscription</text>
-</g>
-<!-- \\CEMS\\Subscription&#45;&gt;\\CEMS\\Resource -->
-<g id="edge7" class="edge"><title>\\CEMS\\Subscription&#45;&gt;\\CEMS\\Resource</title>
-<path fill="none" stroke="black" d="M345.491,-56.4859C339.256,-60.0229 333.119,-64.1979 328,-69 277.633,-116.251 241.682,-190.646 224.812,-230.546"/>
-<polygon fill="none" stroke="black" points="221.527,-229.331 220.937,-239.91 227.995,-232.008 221.527,-229.331"/>
-</g>
-<!-- \\CEMS\\Response -->
-<g id="node10" class="node"><title>\\CEMS\\Response</title>
-<polygon fill="none" stroke="black" points="410.5,-438 351.5,-438 351.5,-402 410.5,-402 410.5,-438"/>
-<text text-anchor="middle" x="381" y="-417.2" font-family="Times,serif" font-size="11.00">Response</text>
-</g>
-<!-- \\CEMS\\EventRegister -->
-<g id="node11" class="node"><title>\\CEMS\\EventRegister</title>
-<polygon fill="none" stroke="black" points="421,-384 341,-384 341,-348 421,-348 421,-384"/>
-<text text-anchor="middle" x="381" y="-363.2" font-family="Times,serif" font-size="11.00">EventRegister</text>
-</g>
-<!-- \\CEMS\\EventRegister&#45;&gt;\\CEMS\\Resource -->
-<g id="edge8" class="edge"><title>\\CEMS\\EventRegister&#45;&gt;\\CEMS\\Resource</title>
-<path fill="none" stroke="black" d="M343.556,-347.899C338.271,-345.037 332.948,-342.022 328,-339 299.155,-321.381 267.97,-298.971 245.519,-282.191"/>
-<polygon fill="none" stroke="black" points="247.461,-279.272 237.366,-276.057 243.253,-284.866 247.461,-279.272"/>
-</g>
-<!-- \\CEMS\\Customer -->
-<g id="node12" class="node"><title>\\CEMS\\Customer</title>
-<polygon fill="none" stroke="black" points="410.5,-330 351.5,-330 351.5,-294 410.5,-294 410.5,-330"/>
-<text text-anchor="middle" x="381" y="-309.2" font-family="Times,serif" font-size="11.00">Customer</text>
-</g>
-<!-- \\CEMS\\Customer&#45;&gt;\\CEMS\\Resource -->
-<g id="edge9" class="edge"><title>\\CEMS\\Customer&#45;&gt;\\CEMS\\Resource</title>
-<path fill="none" stroke="black" d="M351.464,-302.717C324.146,-293.831 282.737,-280.36 252.507,-270.526"/>
-<polygon fill="none" stroke="black" points="253.312,-267.108 242.72,-267.343 251.146,-273.764 253.312,-267.108"/>
+<g id="edge7" class="edge"><title>\\CEMS\\Guzzle4&#45;&gt;\\CEMS\\GuzzleStrategy</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M353.697,-91.7218C330.226,-87.9043 295.169,-82.2023 266.047,-77.4655"/>
+<polygon fill="none" stroke="black" points="266.454,-73.9858 256.022,-75.8349 265.33,-80.895 266.454,-73.9858"/>
 </g>
 <!-- \\CEMS\\SubscriberList -->
-<g id="node13" class="node"><title>\\CEMS\\SubscriberList</title>
-<polygon fill="none" stroke="black" points="421.5,-276 340.5,-276 340.5,-240 421.5,-240 421.5,-276"/>
-<text text-anchor="middle" x="381" y="-255.2" font-family="Times,serif" font-size="11.00">SubscriberList</text>
+<g id="node11" class="node"><title>\\CEMS\\SubscriberList</title>
+<polygon fill="none" stroke="black" points="421.5,-438 340.5,-438 340.5,-402 421.5,-402 421.5,-438"/>
+<text text-anchor="middle" x="381" y="-417.2" font-family="Times,serif" font-size="11.00">SubscriberList</text>
 </g>
 <!-- \\CEMS\\SubscriberList&#45;&gt;\\CEMS\\Resource -->
-<g id="edge10" class="edge"><title>\\CEMS\\SubscriberList&#45;&gt;\\CEMS\\Resource</title>
-<path fill="none" stroke="black" d="M340.239,-258C313.768,-258 279.156,-258 252.871,-258"/>
-<polygon fill="none" stroke="black" points="252.523,-254.5 242.523,-258 252.523,-261.5 252.523,-254.5"/>
+<g id="edge8" class="edge"><title>\\CEMS\\SubscriberList&#45;&gt;\\CEMS\\Resource</title>
+<path fill="none" stroke="black" d="M343.556,-438.101C338.271,-440.963 332.948,-443.978 328,-447 299.155,-464.619 267.97,-487.029 245.519,-503.809"/>
+<polygon fill="none" stroke="black" points="243.253,-501.134 237.366,-509.943 247.461,-506.728 243.253,-501.134"/>
 </g>
-<!-- \\CEMS\\ApiHelper -->
-<g id="node14" class="node"><title>\\CEMS\\ApiHelper</title>
-<polygon fill="none" stroke="black" points="413,-222 349,-222 349,-186 413,-186 413,-222"/>
-<text text-anchor="middle" x="381" y="-201.2" font-family="Times,serif" font-size="11.00">ApiHelper</text>
+<!-- \\Exception -->
+<g id="node19" class="node"><title>\\Exception</title>
+<ellipse fill="none" stroke="black" cx="49" cy="-285" rx="48.9926" ry="18"/>
+<text text-anchor="middle" x="49" y="-281.3" font-family="Times,serif" font-size="14.00" fill="gray">\Exception</text>
 </g>
-<!-- \\CEMS\\Collection -->
-<g id="node15" class="node"><title>\\CEMS\\Collection</title>
-<polygon fill="none" stroke="black" points="412,-168 350,-168 350,-132 412,-132 412,-168"/>
-<text text-anchor="middle" x="381" y="-147.2" font-family="Times,serif" font-size="11.00">Collection</text>
+<!-- \\CEMS\\BaseException&#45;&gt;\\Exception -->
+<g id="edge9" class="edge"><title>\\CEMS\\BaseException&#45;&gt;\\Exception</title>
+<path fill="none" stroke="black" d="M171.121,-285C151.949,-285 128.766,-285 107.836,-285"/>
+<polygon fill="none" stroke="black" points="107.77,-281.5 97.7701,-285 107.77,-288.5 107.77,-281.5"/>
 </g>
 <!-- \\CEMS\\ClientException -->
-<g id="node16" class="node"><title>\\CEMS\\ClientException</title>
-<polygon fill="none" stroke="black" points="425,-654 337,-654 337,-618 425,-618 425,-654"/>
-<text text-anchor="middle" x="381" y="-633.2" font-family="Times,serif" font-size="11.00">ClientException</text>
+<g id="node14" class="node"><title>\\CEMS\\ClientException</title>
+<polygon fill="none" stroke="black" points="425,-330 337,-330 337,-294 425,-294 425,-330"/>
+<text text-anchor="middle" x="381" y="-309.2" font-family="Times,serif" font-size="11.00">ClientException</text>
 </g>
 <!-- \\CEMS\\ClientException&#45;&gt;\\CEMS\\BaseException -->
-<g id="edge11" class="edge"><title>\\CEMS\\ClientException&#45;&gt;\\CEMS\\BaseException</title>
-<path fill="none" stroke="black" d="M336.819,-628.977C314.727,-625.383 287.703,-620.988 264.634,-617.236"/>
-<polygon fill="none" stroke="black" points="265.113,-613.768 254.681,-615.617 263.99,-620.677 265.113,-613.768"/>
+<g id="edge10" class="edge"><title>\\CEMS\\ClientException&#45;&gt;\\CEMS\\BaseException</title>
+<path fill="none" stroke="black" d="M336.819,-304.977C314.727,-301.383 287.703,-296.988 264.634,-293.236"/>
+<polygon fill="none" stroke="black" points="265.113,-289.768 254.681,-291.617 263.99,-296.677 265.113,-289.768"/>
+</g>
+<!-- \\CEMS\\Client -->
+<g id="node15" class="node"><title>\\CEMS\\Client</title>
+<polygon fill="none" stroke="black" points="408,-168 354,-168 354,-132 408,-132 408,-168"/>
+<text text-anchor="middle" x="381" y="-147.2" font-family="Times,serif" font-size="11.00">Client</text>
 </g>
 <!-- \\CEMS\\AuthorizeException -->
-<g id="node17" class="node"><title>\\CEMS\\AuthorizeException</title>
-<polygon fill="none" stroke="black" points="433.5,-600 328.5,-600 328.5,-564 433.5,-564 433.5,-600"/>
-<text text-anchor="middle" x="381" y="-579.2" font-family="Times,serif" font-size="11.00">AuthorizeException</text>
+<g id="node16" class="node"><title>\\CEMS\\AuthorizeException</title>
+<polygon fill="none" stroke="black" points="433.5,-276 328.5,-276 328.5,-240 433.5,-240 433.5,-276"/>
+<text text-anchor="middle" x="381" y="-255.2" font-family="Times,serif" font-size="11.00">AuthorizeException</text>
 </g>
 <!-- \\CEMS\\AuthorizeException&#45;&gt;\\CEMS\\BaseException -->
-<g id="edge12" class="edge"><title>\\CEMS\\AuthorizeException&#45;&gt;\\CEMS\\BaseException</title>
-<path fill="none" stroke="black" d="M328.387,-590.395C308.032,-593.706 284.723,-597.497 264.48,-600.789"/>
-<polygon fill="none" stroke="black" points="263.82,-597.351 254.512,-602.411 264.944,-604.26 263.82,-597.351"/>
+<g id="edge11" class="edge"><title>\\CEMS\\AuthorizeException&#45;&gt;\\CEMS\\BaseException</title>
+<path fill="none" stroke="black" d="M328.387,-266.395C308.032,-269.706 284.723,-273.497 264.48,-276.789"/>
+<polygon fill="none" stroke="black" points="263.82,-273.351 254.512,-278.411 264.944,-280.26 263.82,-273.351"/>
+</g>
+<!-- \\CEMS\\Guzzle3 -->
+<g id="node17" class="node"><title>\\CEMS\\Guzzle3</title>
+<polygon fill="none" stroke="black" points="408,-60 354,-60 354,-24 408,-24 408,-60"/>
+<text text-anchor="middle" x="381" y="-39.2" font-family="Times,serif" font-size="11.00">Guzzle3</text>
+</g>
+<!-- \\CEMS\\Guzzle3&#45;&gt;\\CEMS\\GuzzleStrategy -->
+<g id="edge12" class="edge"><title>\\CEMS\\Guzzle3&#45;&gt;\\CEMS\\GuzzleStrategy</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M353.697,-46.2782C330.226,-50.0957 295.169,-55.7977 266.047,-60.5345"/>
+<polygon fill="none" stroke="black" points="265.33,-57.105 256.022,-62.1651 266.454,-64.0142 265.33,-57.105"/>
 </g>
 </g>
 </svg>

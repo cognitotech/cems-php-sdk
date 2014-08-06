@@ -10,9 +10,9 @@ namespace CEMS;
 
 /**
  * Class Response is using for handling data result from request method of Client object
- * 
+ *
  * TODO: move to concrete class: AuthorizationResponse
- * @property string $access_token Access Token; 
+ * @property string $access_token Access Token;
  * TODO: move to concrete class: CollectionResponse
  * @property int $per_page Maximum Item Per Page
  * @property int $current_page Current Page Number
@@ -35,6 +35,8 @@ class Response
     protected $statusCode = 404;
 
     /**
+     * Constructor
+     *
      * @param array $JSON_data Response's JSON data
      * @param int $status Response's Status
      */
@@ -46,6 +48,7 @@ class Response
 
     /**
      * Return list of item with specified class name
+     *
      * @param string $type
      *
      * @return Collection
@@ -57,6 +60,7 @@ class Response
 
     /**
      * Return single item with specified class name
+     *
      * @param string $type
      *
      * @return object
@@ -81,6 +85,13 @@ class Response
         return $this->statusCode;
     }
 
+    /**
+     * Getter for data inside respond
+     *
+     * @param $key
+     *
+     * @return mixed value
+     */
     public function __get($key)
     {
         if (array_key_exists($key, $this->response)) {
@@ -90,6 +101,12 @@ class Response
         return null;
     }
 
+    /**
+     * Check whether the value correspond to the key exist inside response
+     * @param string $key
+     *
+     * @return bool
+     */
     public function __isset($key)
     {
         return isset($this->response[$key]);

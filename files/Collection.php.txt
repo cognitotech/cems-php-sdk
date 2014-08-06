@@ -16,25 +16,25 @@ class Collection
 {
     /**
      * Collection data
-     * 
+     *
      * @var array
      */
     protected $collection = array();
 
     /**
      * Collection results' params
-     * 
+     *
      * @var array{
      *      An array of  Collection's Parameters
-     *          @type int $per_page Per Page
-     *          @type int $current_page Current Page
-     *          @type int $total_pages Total Pages
-     *          @type int $total_entries Total  Entries
-     *          @type int $offset Offset
-     *          @type int $length Length
+     * @type int $per_page Per Page
+     * @type int $current_page Current Page
+     * @type int $total_pages Total Pages
+     * @type int $total_entries Total  Entries
+     * @type int $offset Offset
+     * @type int $length Length
      * }
      */
-     protected $params = array();
+    protected $params = array();
 
     /**
      * Collection Constructor
@@ -71,6 +71,12 @@ class Collection
         return $this->collection;
     }
 
+    /**
+     * Getter for the parameters of collection
+     * @param $key
+     *
+     * @return mixed
+     */
     public function __get($key)
     {
         if (array_key_exists($key, $this->params)) {
@@ -80,6 +86,12 @@ class Collection
         return null;
     }
 
+    /**
+     * Check if parameters associated with collection exist
+     * @param $key
+     *
+     * @return bool
+     */
     public function __isset($key)
     {
         return isset($this->params[$key]);
